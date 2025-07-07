@@ -1,0 +1,211 @@
+import Navigation from "@/components/Navigation";
+import { Card, CardContent } from "@/components/ui/card";
+
+const AboutUs = () => {
+  return (
+    <div className="min-h-screen">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-subtle">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            About <span className="text-primary">AccountsWhiz</span>
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Your One-Stop Shop For All Accounting & Compliance Needs
+          </p>
+        </div>
+      </section>
+
+      {/* Vision & Mission */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 mb-20">
+            <Card className="shadow-card border-0">
+              <CardContent className="p-8 text-center">
+                <h2 className="text-2xl font-bold text-primary mb-4">Our Vision</h2>
+                <p className="text-lg text-foreground">
+                  To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-card border-0">
+              <CardContent className="p-8 text-center">
+                <h2 className="text-2xl font-bold text-primary mb-4">Our Mission</h2>
+                <p className="text-lg text-foreground">
+                  To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* About Content */}
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Who We Are
+              </h2>
+            </div>
+            
+            <div className="prose prose-lg max-w-none text-foreground/80">
+              <p className="text-lg leading-relaxed mb-6">
+                Paying taxes, performing accounting tasks, ensuring statutory compliances, filing returns put forward by government authorities and so on, the very thought of working with these numbers can be nerve-wracking for business owners. Worry not. You have found the right partner in Accountswhiz India Pvt Ltd. We are a full-service accountancy firm with its headquarters in Bengaluru. For decades, our name has been synonymous with accurate accounting, compliance and timely corporate Secretarial work.
+              </p>
+              
+              <p className="text-lg leading-relaxed mb-6">
+                We strive to provide reliable accounting and related services to small and mid-sized companies. Over the years, we have served companies across a cross-section of industries. Our client roster includes entrepreneurs, trusts, firms, corporates and a number of multinationals. No matter what the size of a company may be, all our clients are equally important to us. We consider our long-standing relationships with our clients to be amongst our biggest successes.
+              </p>
+
+              <h3 className="text-2xl font-bold text-foreground mt-12 mb-6">
+                From Accounting To Regulatory Compliance And Everything In Between
+              </h3>
+              
+              <p className="text-lg leading-relaxed mb-6">
+                Accountswhiz India Pvt Ltd offers a full bouquet of professional advisory and executionary services. Our services include payroll management, bookkeeping, tax compliance, regulatory compliance of state and central laws, audits co-ordination, document processing, and a range of other customized services.
+              </p>
+              
+              <p className="text-lg leading-relaxed mb-12">
+                We partner with businesses not just to keep their books in order but also to help each venture grow. We are constantly on the lookout for new opportunities that could prove beneficial to our clients. Backed by knowledge gained from years of experience, our team helps you put the financial and other documentation crucial to the firm's growth in place helping you focus on your core operations. For all our customers, we offer hands-on support that can help them achieve their short term and long term goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="py-20 bg-professional-light">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              How Do We Empower Your Business?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              All our actions are driven by a core set of beliefs and values shared amongst all the members of our team.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="shadow-card border-0">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-primary mb-3">An Ethical Approach</h3>
+                <p className="text-foreground/80">
+                  We believe that nothing can be valued higher than integrity. We approach everything we do with fairness and a highly conscious attitude.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card border-0">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-primary mb-3">Diligence</h3>
+                <p className="text-foreground/80">
+                  We investigate every situation thoroughly from all angles to understand the impact it may have on businesses.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card border-0">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-primary mb-3">Professionalism</h3>
+                <p className="text-foreground/80">
+                  We adhere to national and international accounting standards in all our reports and findings, maintain confidentiality at all times.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card border-0">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-primary mb-3">Open Honest Communication</h3>
+                <p className="text-foreground/80">
+                  At all times, we maintain open lines of communication with our clients and provide constructive advice.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card border-0">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-primary mb-3">Harmonious Teamwork</h3>
+                <p className="text-foreground/80">
+                  The members of our team work harmoniously together, building each other up to bring out the best in you.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card border-0">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-primary mb-3">Trust</h3>
+                <p className="text-foreground/80">
+                  By promoting transparency at all levels, we build relationships based on trust between us and our clients.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <Card className="max-w-4xl mx-auto shadow-card border-0">
+            <CardContent className="p-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Expertise And Experience
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Between all the members of our team, we have over 80 years of experience backing our expertise. However, we continually strive to improve our services to maintain our status as the best in the business.
+              </p>
+              <p className="text-lg text-foreground">
+                We believe that for growth to be sustainable, it must be socially inclusive. This is one of the reasons why we also work with Non-Profit organizations. Through our influence and approach to various situations, we are committed to helping your organization put the best financial practices in place.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-professional-dark text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">A</span>
+                </div>
+                <span className="text-xl font-semibold">AccountsWhiz</span>
+              </div>
+              <p className="text-white/80">
+                Strategic financial services for growth-oriented businesses.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-white/80">
+                <li>Entity Setup & Structuring</li>
+                <li>Accounting & Reporting</li>
+                <li>Payroll & Compliance</li>
+                <li>Taxation & Filings</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <div className="space-y-2 text-white/80">
+                <p>+91 90080 34040</p>
+                <p>info@accountswhiz.com</p>
+                <p>Mon - Fri: 9:00 AM - 6:00 PM IST</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
+            <p>&copy; 2024 AccountsWhiz. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default AboutUs;

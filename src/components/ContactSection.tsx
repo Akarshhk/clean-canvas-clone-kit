@@ -1,8 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useForm } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const ContactSection = () => {
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const { toast } = useToast();
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for reaching out. We'll get back to you soon.",
+    });
+    reset();
+  };
+
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -58,43 +75,97 @@ const ContactSection = () => {
             </div>
           </div>
           
-          {/* Right Content - CTA Card */}
+          {/* Right Content - Contact Form */}
           <div>
-            <Card className="bg-gradient-hero text-white border-0 shadow-elegant">
-              <CardHeader className="pb-6">
-                <CardTitle className="text-2xl font-bold">
-                  Ready to Get Started?
+            <Card className="shadow-elegant border-0">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground">
+                  Contact Us
                 </CardTitle>
-                <p className="text-white/90">
-                  Join 100+ growing businesses that trust us with their financial operations.
+                <p className="text-muted-foreground">
+                  Fill out the form below and we'll get back to you within 24 hours.
                 </p>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span>Free initial consultation</span>
+              <CardContent>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName">First Name *</Label>
+                      <Input
+                        id="firstName"
+                        {...register("firstName", { required: "First name is required" })}
+                        className={errors.firstName ? "border-destructive" : ""}
+                      />
+                      {errors.firstName && (
+                        <p className="text-sm text-destructive">{errors.firstName.message as string}</p>
+                      )}
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName">Last Name *</Label>
+                      <Input
+                        id="lastName"
+                        {...register("lastName", { required: "Last name is required" })}
+                        className={errors.lastName ? "border-destructive" : ""}
+                      />
+                      {errors.lastName && (
+                        <p className="text-sm text-destructive">{errors.lastName.message as string}</p>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span>Customized service packages</span>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      {...register("email", { 
+                        required: "Email is required",
+                        pattern: {
+                          value: /^\S+@\S+$/i,
+                          message: "Invalid email address"
+                        }
+                      })}
+                      className={errors.email ? "border-destructive" : ""}
+                    />
+                    {errors.email && (
+                      <p className="text-sm text-destructive">{errors.email.message as string}</p>
+                    )}
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span>Expert guidance from day one</span>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      {...register("phone")}
+                    />
                   </div>
-                </div>
-                
-                <Button 
-                  size="lg" 
-                  className="w-full bg-white text-primary hover:bg-white/90"
-                >
-                  Schedule a Consultation
-                </Button>
-                
-                <div className="text-center text-white/80 text-sm">
-                  Trusted by startups backed by leading institutional investors
-                </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="company">Company</Label>
+                    <Input
+                      id="company"
+                      {...register("company")}
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message *</Label>
+                    <Textarea
+                      id="message"
+                      rows={4}
+                      {...register("message", { required: "Message is required" })}
+                      className={errors.message ? "border-destructive" : ""}
+                    />
+                    {errors.message && (
+                      <p className="text-sm text-destructive">{errors.message.message as string}</p>
+                    )}
+                  </div>
+                  
+                  <Button type="submit" size="lg" className="w-full">
+                    Send Message
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>
