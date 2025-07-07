@@ -56,7 +56,8 @@ export default {
 					blue: 'hsl(var(--professional-blue))',
 					dark: 'hsl(var(--professional-dark))',
 					light: 'hsl(var(--professional-light))',
-					gray: 'hsl(var(--professional-gray))'
+					gray: 'hsl(var(--professional-gray))',
+					accent: 'hsl(var(--professional-accent))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

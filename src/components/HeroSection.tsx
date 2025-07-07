@@ -21,9 +21,9 @@ const HeroSection = () => {
           <div className="animate-fade-in">
             <h1 className="font-bold leading-tight text-white">
               <span className="text-5xl md:text-7xl">AccountsWhiz</span> <br />
-              <span className="text-3xl md:text-5xl text-primary mt-2 block">STRATEGIC</span> <br />
-              <span className="text-3xl md:text-5xl text-primary">FINANCIAL SERVICES</span> <br />
-              <span className="text-3xl md:text-5xl text-primary">FOR GROWTH</span>
+              <span className="text-3xl md:text-5xl text-professional-accent mt-2 block">STRATEGIC</span> <br />
+              <span className="text-3xl md:text-5xl text-professional-accent">FINANCIAL SERVICES</span> <br />
+              <span className="text-3xl md:text-5xl text-professional-accent">FOR GROWTH</span>
             </h1>
           </div>
         </div>

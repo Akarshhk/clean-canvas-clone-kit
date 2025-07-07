@@ -39,6 +39,7 @@
     --professional-dark: 210 10% 15%;
     --professional-light: 210 20% 96%;
     --professional-gray: 210 8% 45%;
+    --professional-accent: 244 15% 75%;
     
     /* Urban gradients */
     --gradient-hero: linear-gradient(135deg, hsl(210 15% 25%) 0%, hsl(210 10% 15%) 100%);
