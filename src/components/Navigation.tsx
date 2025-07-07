@@ -49,13 +49,13 @@ const Navigation = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2">
             <img 
               src="/lovable-uploads/9fa1a284-3e76-4491-974b-b6f393455d33.png" 
               alt="AccountsWhiz Logo" 
               className="h-10 w-auto"
             />
-          </div>
+          </a>
           
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">

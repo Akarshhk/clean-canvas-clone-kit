@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building, Calculator, Users, FileText, Shield } from "lucide-react";
+import { Building, Calculator, Users, FileText, Shield, TrendingUp } from "lucide-react";
 
 const services = [
   {
@@ -50,6 +50,16 @@ const services = [
       "Board support and statutory filings",
       "Annual return filings and ROC compliance",
       "Corporate governance advisory"
+    ]
+  },
+  {
+    icon: TrendingUp,
+    title: "Virtual CFO & Advisory",
+    description: "Strategic finance capabilities without full-time overhead",
+    features: [
+      "Business model validation and growth scenario planning",
+      "Investment readiness and due diligence support",
+      "Budgeting, forecasting, and investor reporting"
     ]
   }
 ];
