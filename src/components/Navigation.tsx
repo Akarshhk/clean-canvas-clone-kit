@@ -1,7 +1,17 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, Menu, X } from "lucide-react";
 
 const Navigation = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       {/* Contact info bar with social media */}
@@ -57,7 +67,7 @@ const Navigation = () => {
             />
           </a>
           
-          {/* Navigation Links */}
+          {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="/" className="text-foreground hover:text-primary transition-colors">Home</a>
             <a href="/about" className="text-foreground hover:text-primary transition-colors">About Us</a>
@@ -83,7 +93,78 @@ const Navigation = () => {
               Contact Us
             </a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg z-50">
+            <div className="container mx-auto px-4 py-4">
+              <div className="flex flex-col space-y-4">
+                <a 
+                  href="/" 
+                  className="text-foreground hover:text-primary transition-colors py-2"
+                  onClick={closeMobileMenu}
+                >
+                  Home
+                </a>
+                <a 
+                  href="/about" 
+                  className="text-foreground hover:text-primary transition-colors py-2"
+                  onClick={closeMobileMenu}
+                >
+                  About Us
+                </a>
+                <a 
+                  href="/india-services" 
+                  className="text-foreground hover:text-primary transition-colors py-2"
+                  onClick={closeMobileMenu}
+                >
+                  India Services
+                </a>
+                <a 
+                  href="/us-services" 
+                  className="text-foreground hover:text-primary transition-colors py-2"
+                  onClick={closeMobileMenu}
+                >
+                  US Services
+                </a>
+                <a 
+                  href="#contact" 
+                  className="text-foreground hover:text-primary transition-colors py-2"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    closeMobileMenu();
+                    // If we're on the home page, scroll to contact section
+                    if (window.location.pathname === '/') {
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    } else {
+                      // If we're on another page, navigate to home page with contact hash
+                      window.location.href = '/#contact';
+                    }
+                  }}
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
