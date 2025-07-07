@@ -163,6 +163,59 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Visit Our Office
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              1386, 1st Floor, 28th Main, South End 'A' Cross, Jayanagar 9th Block, Bangalore – 560 069
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-card">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.392!2d77.5831856!3d12.9352618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15c27d3b8b39%3A0x8f3e7a7b8c3b4e8f!2sJayanagar%209th%20Block%2C%20Bengaluru%2C%20Karnataka%20560069!5e0!3m2!1sen!2sin!4v1"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="AccountsWhiz Office Location"
+              ></iframe>
+            </div>
+          </div>
+          
+          {/* Social Media Links */}
+          <div className="flex justify-center gap-6 mt-12">
+            <a
+              href="https://linkedin.com/company/accountswhiz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+            >
+              <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com/accountswhiz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+            >
+              <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.987 11.988 11.987 6.618 0 11.985-5.369 11.985-11.987C23.97 5.39 18.635.029 12.017.029zM8.542 12.015c0-1.96 1.536-3.528 3.465-3.528 1.93 0 3.467 1.568 3.467 3.528s-1.537 3.527-3.467 3.527c-1.929 0-3.465-1.567-3.465-3.527z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-professional-dark text-white py-12">
         <div className="container mx-auto px-4">
@@ -195,6 +248,30 @@ const AboutUs = () => {
                 <p>+91 90080 34040</p>
                 <p>info@accountswhiz.com</p>
                 <p>Mon - Fri: 9:00 AM - 6:00 PM IST</p>
+              </div>
+              
+              {/* Social Media Links */}
+              <div className="flex gap-4 mt-6">
+                <a
+                  href="https://linkedin.com/company/accountswhiz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                <a
+                  href="https://instagram.com/accountswhiz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
+                >
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.987 11.988 11.987 6.618 0 11.985-5.369 11.985-11.987C23.97 5.39 18.635.029 12.017.029zM8.542 12.015c0-1.96 1.536-3.528 3.465-3.528 1.93 0 3.467 1.568 3.467 3.528s-1.537 3.527-3.467 3.527c-1.929 0-3.465-1.567-3.465-3.527z"/>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>

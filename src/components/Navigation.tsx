@@ -31,11 +31,11 @@ const Navigation = () => {
           
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="/" className="text-foreground hover:text-primary transition-colors">Home</a>
             <a href="/about" className="text-foreground hover:text-primary transition-colors">About Us</a>
-            <a href="#services" className="text-foreground hover:text-primary transition-colors">India Services</a>
-            <a href="#services" className="text-foreground hover:text-primary transition-colors">US Services</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact Us</a>
+            <a href="/#services" className="text-foreground hover:text-primary transition-colors">India Services</a>
+            <a href="/#services" className="text-foreground hover:text-primary transition-colors">US Services</a>
+            <a href="/#contact" className="text-foreground hover:text-primary transition-colors">Contact Us</a>
           </div>
         </div>
       </div>
