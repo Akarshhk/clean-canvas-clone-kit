@@ -43,17 +43,31 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-white px-8 py-3"
-                onClick={() => window.location.href = '/india-services'}
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#contact';
+                  }
+                }}
               >
-                Explore India Services
+                Start Your India Journey
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
                 className="px-8 py-3"
-                onClick={() => window.location.href = '/us-services'}
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = '/#contact';
+                  }
+                }}
               >
-                Explore US Services
+                Start Your US Journey
               </Button>
             </div>
 

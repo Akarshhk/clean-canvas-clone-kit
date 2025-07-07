@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CheckCircle } from "lucide-react";
 
 const IndiaServices = () => {
@@ -235,13 +236,76 @@ const IndiaServices = () => {
             </div>
           </div>
 
+          {/* What We Offer Table */}
+          <div className="bg-card rounded-2xl p-8 mb-16">
+            <h2 className="text-3xl font-bold text-center mb-8">What We Offer</h2>
+            <p className="text-center text-muted-foreground mb-12">
+              Choose the perfect plan that fits your business needs and scale as you grow
+            </p>
+            
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="font-semibold text-primary">Services Offered</TableHead>
+                    <TableHead className="font-semibold text-primary text-center">AW-Startup</TableHead>
+                    <TableHead className="font-semibold text-primary text-center">AW Startup PRO</TableHead>
+                    <TableHead className="font-semibold text-primary text-center">AW Startup PRO +</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium">Book Keeping & Accounting Services</TableCell>
+                    <TableCell className="text-center">Lite Plan</TableCell>
+                    <TableCell className="text-center">Full Plan</TableCell>
+                    <TableCell className="text-center">Full Plan</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">TDS & GST Compliance (Monthly/Quarterly/Annual as applicable)</TableCell>
+                    <TableCell className="text-center">Quarterly</TableCell>
+                    <TableCell className="text-center">Monthly/Quarterly</TableCell>
+                    <TableCell className="text-center">Monthly/Quarterly</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Payroll Accounting including PT and PF/ESI Compliance</TableCell>
+                    <TableCell className="text-center">NA</TableCell>
+                    <TableCell className="text-center">Full Management - Up to 20 employees</TableCell>
+                    <TableCell className="text-center">Full Management - Up to 100 employees</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Support from Dedicated Account Manager through mails/phones</TableCell>
+                    <TableCell className="text-center">NA</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                    <TableCell className="text-center">✓</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Corporate Secretarial Filings</TableCell>
+                    <TableCell className="text-center">NA</TableCell>
+                    <TableCell className="text-center">Annual Returns</TableCell>
+                    <TableCell className="text-center">Full Management</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">Review meeting with a Senior Professional on cashflow planning/MIS</TableCell>
+                    <TableCell className="text-center">NA</TableCell>
+                    <TableCell className="text-center">Monthly</TableCell>
+                    <TableCell className="text-center">Monthly and Ad-hoc service</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+
           {/* CTA Section */}
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Streamline Your India Operations?</h2>
             <p className="text-xl text-muted-foreground mb-8">
               Join 100+ happy clients who trust us with their Indian business operations
             </p>
-            <Button size="lg" className="px-8 py-3">
+            <Button 
+              size="lg" 
+              className="px-8 py-3"
+              onClick={() => window.location.href = '/#contact'}
+            >
               Start Your India Journey
             </Button>
           </div>
