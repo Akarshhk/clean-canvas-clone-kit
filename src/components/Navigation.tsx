@@ -68,9 +68,15 @@ const Navigation = () => {
               className="text-foreground hover:text-primary transition-colors"
               onClick={(e) => {
                 e.preventDefault();
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                // If we're on the home page, scroll to contact section
+                if (window.location.pathname === '/') {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                } else {
+                  // If we're on another page, navigate to home page with contact hash
+                  window.location.href = '/#contact';
                 }
               }}
             >

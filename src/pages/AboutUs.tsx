@@ -163,6 +163,91 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* Our Expert Team Section */}
+      <section className="py-20 bg-professional-light">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Our Expert Team
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Radha Kolathur Canthadai */}
+            <Card className="shadow-card border-0">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <img 
+                    src="/lovable-uploads/247e2848-8ebb-4360-8ddc-59d136ea8ca3.png" 
+                    alt="Radha Kolathur Canthadai" 
+                    className="w-32 h-32 rounded-full object-cover mx-auto mb-4"
+                  />
+                  <h3 className="text-xl font-bold text-primary mb-2">RADHA KOLATHUR CANTHADAI</h3>
+                  <p className="text-sm font-semibold text-muted-foreground mb-4">DIRECTOR, M.COM, FCA, CPA (Inactive), CISA (USA) AND CIA (USA)</p>
+                </div>
+                <p className="text-foreground/80 text-sm leading-relaxed">
+                  A seasoned risk management and compliance champion with more than 12 years of experience in leading global audit and software compliance teams in HP. Prior to HP, she worked in Deloitte Haskins & Sells in Risk Advisory Services. She is also well versed with the accounting and financial advisory needs of start-ups. Given her exposure in multiple geographies, Radha can lead, engage and work with teams from diverse backgrounds.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Geetha Suresh */}
+            <Card className="shadow-card border-0">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <img 
+                    src="/lovable-uploads/1850e040-d06f-4b25-aea6-eb82cf822d58.png" 
+                    alt="Geetha Suresh" 
+                    className="w-32 h-32 rounded-full object-cover mx-auto mb-4"
+                  />
+                  <h3 className="text-xl font-bold text-primary mb-2">GEETHA SURESH</h3>
+                  <p className="text-sm font-semibold text-muted-foreground mb-4">DIRECTOR B COM, CMA, CS, CPA (Inactive), (USA)</p>
+                </div>
+                <p className="text-foreground/80 text-sm leading-relaxed">
+                  Geetha specializes in Cost Accountancy and is a member of the California Board of Accountancy(CPA) and CS. Her theoretical knowledge is backed by over 26 years of practical work experience with multinational corporations as well as start-ups., Including heading the Bangalore operations of Proactive Solutech , a dominant player in outsourcing field. A dynamic personality paired with an optimistic outlook makes Geetha exude positivity wherever she goes. She is known by her team to be a good team player and someone who is always ready to help in any way she can.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Jayanthi Srinivasan */}
+            <Card className="shadow-card border-0">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <img 
+                    src="/lovable-uploads/20c494bf-75b9-459f-825a-833c11098350.png" 
+                    alt="Jayanthi Srinivasan" 
+                    className="w-32 h-32 rounded-full object-cover mx-auto mb-4"
+                  />
+                  <h3 className="text-xl font-bold text-primary mb-2">JAYANTHI SRINIVASAN</h3>
+                  <p className="text-sm font-semibold text-muted-foreground mb-4">DIRECTOR, B.COM, CS</p>
+                </div>
+                <p className="text-foreground/80 text-sm leading-relaxed">
+                  Jayanthi Srinivasan is an accomplished Company Secretary and a generalist by practice. She has over 25 years of experience working with big and small brands. .Her stint also involved heading secretarial practice & marketing in Proactive Solutech Operations in Bangalore. Over the years she has become known as a specialist on Corporate Secretarial Matters. Having worked with a number of emerging start-ups, she understands the pulse of the budding directors and entrepreneurs and manages investor relations.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Managing Partner */}
+            <Card className="shadow-card border-0">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
+                  <img 
+                    src="/lovable-uploads/b963138e-8796-4756-90df-c0a928fcf2fb.png" 
+                    alt="Managing Partner" 
+                    className="w-32 h-32 rounded-full object-cover mx-auto mb-4"
+                  />
+                  <h3 className="text-xl font-bold text-primary mb-2">SUDHA RAMAN</h3>
+                  <p className="text-sm font-semibold text-muted-foreground mb-4">MANAGING PARTNER – S R P S & ASSOCIATES (Chennai) M.COM, FCA, CISA(USA) and CIA(USA)</p>
+                </div>
+                <p className="text-foreground/80 text-sm leading-relaxed">
+                  An experienced Audit & Finance Professional with stints in US based IT giants – DXC Technology & iGate Global Solutions (part of Capgemini.) Sudha was a key contributor in Corporate Finance with primary focus on revenue recognition, revenue assurance and FP&A. As a risk management professional, she handled diverse areas in Corporate Internal Audit .Currently she heads our associate firm specializing in Corporate Compliances and Taxation.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
 
 
       {/* Footer */}

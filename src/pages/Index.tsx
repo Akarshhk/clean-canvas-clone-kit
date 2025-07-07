@@ -30,7 +30,7 @@ const Index = () => {
             <div className="max-w-4xl mx-auto">
               <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-card">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.392!2d77.5831856!3d12.9352618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b6c8f7c7f7%3A0x5f7c7b7a7b7c7f7f!2sAccountswhiz%20India%20Private%20Limited%2C%201386%20Southend%20A%20cross%2C%2028th%20Main%20Rd%2C%20Jayanagara%209th%20Block%2C%20Bengaluru%2C%20Karnataka%20560069!5e0!3m2!1sen!2sin!4v1"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.1753073919563!2d77.58275057500982!3d12.944659687364844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159cf36d2f33%3A0x96a1a86e44582c85!2s1386%2C%20Southend%20A%20Cross%2C%2028th%20Main%20Rd%2C%20Jayanagar%209th%20Block%2C%20Bengaluru%2C%20Karnataka%20560069!5e0!3m2!1sen!2sin!4v1735718400000!5m2!1sen!2sin&markers=12.944659687364844,77.58275057500982"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
