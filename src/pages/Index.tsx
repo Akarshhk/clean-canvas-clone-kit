@@ -16,29 +16,29 @@ const Index = () => {
       {/* Map Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Visit Our Office
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              1386, 1st Floor, 28th Main, South End 'A' Cross, Jayanagar 9th Block, Bangalore – 560 069
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-card">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.392!2d77.5831856!3d12.9352618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15c27d3b8b39%3A0x8f3e7a7b8c3b4e8f!2sJayanagar%209th%20Block%2C%20Bengaluru%2C%20Karnataka%20560069!5e0!3m2!1sen!2sin!4v1"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="AccountsWhiz Office Location"
-              ></iframe>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Visit Our Office
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Accountswhiz India Private Limited, 1386 Southend A cross, 28th Main Rd, Jayanagara 9th Block, Bengaluru, Karnataka 560069
+              </p>
             </div>
-          </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-card">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.392!2d77.5831856!3d12.9352618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b6c8f7c7f7%3A0x5f7c7b7a7b7c7f7f!2sAccountswhiz%20India%20Private%20Limited%2C%201386%20Southend%20A%20cross%2C%2028th%20Main%20Rd%2C%20Jayanagara%209th%20Block%2C%20Bengaluru%2C%20Karnataka%20560069!5e0!3m2!1sen!2sin!4v1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="AccountsWhiz Office Location"
+                ></iframe>
+              </div>
+            </div>
         </div>
       </section>
       
@@ -48,10 +48,11 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">A</span>
-                </div>
-                <span className="text-xl font-semibold">AccountsWhiz</span>
+                <img 
+                  src="/lovable-uploads/9fa1a284-3e76-4491-974b-b6f393455d33.png" 
+                  alt="AccountsWhiz Logo" 
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-white/80">
                 Strategic financial services for growth-oriented businesses.

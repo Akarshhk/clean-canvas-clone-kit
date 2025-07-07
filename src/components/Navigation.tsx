@@ -50,18 +50,19 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">A</span>
-            </div>
-            <span className="text-xl font-semibold text-foreground">AccountsWhiz</span>
+            <img 
+              src="/lovable-uploads/9fa1a284-3e76-4491-974b-b6f393455d33.png" 
+              alt="AccountsWhiz Logo" 
+              className="h-10 w-auto"
+            />
           </div>
           
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="/" className="text-foreground hover:text-primary transition-colors">Home</a>
             <a href="/about" className="text-foreground hover:text-primary transition-colors">About Us</a>
-            <a href="/#services" className="text-foreground hover:text-primary transition-colors">India Services</a>
-            <a href="/#services" className="text-foreground hover:text-primary transition-colors">US Services</a>
+            <a href="/india-services" className="text-foreground hover:text-primary transition-colors">India Services</a>
+            <a href="/us-services" className="text-foreground hover:text-primary transition-colors">US Services</a>
             <a href="/#contact" className="text-foreground hover:text-primary transition-colors">Contact Us</a>
           </div>
         </div>
