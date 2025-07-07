@@ -63,7 +63,19 @@ const Navigation = () => {
             <a href="/about" className="text-foreground hover:text-primary transition-colors">About Us</a>
             <a href="/india-services" className="text-foreground hover:text-primary transition-colors">India Services</a>
             <a href="/us-services" className="text-foreground hover:text-primary transition-colors">US Services</a>
-            <a href="/#contact" className="text-foreground hover:text-primary transition-colors">Contact Us</a>
+            <a 
+              href="#contact" 
+              className="text-foreground hover:text-primary transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </div>

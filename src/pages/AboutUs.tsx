@@ -171,10 +171,11 @@ const AboutUs = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">A</span>
-                </div>
-                <span className="text-xl font-semibold">AccountsWhiz</span>
+                <img 
+                  src="/lovable-uploads/9fa1a284-3e76-4491-974b-b6f393455d33.png" 
+                  alt="AccountsWhiz Logo" 
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-white/80">
                 Strategic financial services for growth-oriented businesses.
@@ -226,7 +227,7 @@ const AboutUs = () => {
           </div>
           
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-            <p>&copy; 2024 AccountsWhiz. All rights reserved.</p>
+            <p>Copyright ©2025 Accountswhiz India Pvt Ltd . All rights reserved.</p>
           </div>
         </div>
       </footer>

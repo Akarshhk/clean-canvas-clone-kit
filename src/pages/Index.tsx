@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <ServicesSection />
+      <TestimonialsSection />
       <FAQSection />
       <ContactSection />
       
@@ -104,7 +106,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-            <p>&copy; 2024 AccountsWhiz. All rights reserved.</p>
+            <p>Copyright ©2025 Accountswhiz India Pvt Ltd . All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -43,6 +43,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-white px-8 py-3"
+                onClick={() => window.location.href = '/india-services'}
               >
                 Explore India Services
               </Button>
@@ -50,6 +51,7 @@ const HeroSection = () => {
                 size="lg" 
                 variant="outline" 
                 className="px-8 py-3"
+                onClick={() => window.location.href = '/us-services'}
               >
                 Explore US Services
               </Button>
