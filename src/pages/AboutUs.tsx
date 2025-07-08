@@ -127,11 +127,12 @@ const AboutUs = () => {
                     </div>
                   </div>
 
+                <div className="grid md:grid-cols-2 gap-6">
                   <div className="flex items-start space-x-4 p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <h4 className="font-bold text-accent mb-2">Expert Documentation</h4>
-                      <p className="text-foreground/80">Years of experience in critical financial documentation, enabling clients to focus on core operations.</p>
+                      <p className="text-foreground">Years of experience in critical financial documentation, enabling clients to focus on core operations.</p>
                     </div>
                   </div>
 
@@ -142,6 +143,7 @@ const AboutUs = () => {
                       <p className="text-foreground/80">Building meaningful partnerships with clients as one of our biggest successes over the years.</p>
                     </div>
                   </div>
+                </div>
                 </div>
 
                 <div className="space-y-6">
