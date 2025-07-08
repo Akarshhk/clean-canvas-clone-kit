@@ -140,7 +140,7 @@ const AboutUs = () => {
                     <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <h4 className="font-bold text-secondary mb-2">Long-Standing Relationships</h4>
-                      <p className="text-foreground/80">Building meaningful partnerships with clients as one of our biggest successes over the years.</p>
+                      <p className="text-foreground">Building meaningful partnerships with clients as one of our biggest successes over the years.</p>
                     </div>
                   </div>
                 </div>
