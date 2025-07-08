@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import CountUpAnimation from "./CountUpAnimation";
 const heroImage = "/lovable-uploads/799ad5f7-5986-4218-9203-8b3246083348.png";
 
 const HeroSection = () => {
@@ -25,6 +26,18 @@ const HeroSection = () => {
               <span className="text-3xl md:text-5xl text-professional-accent">financial services</span> <br />
               <span className="text-3xl md:text-5xl text-professional-accent">for growth</span>
             </h1>
+            
+            {/* Stats on Hero */}
+            <div className="grid grid-cols-2 gap-8 mt-12 max-w-md mx-auto">
+              <div className="text-center">
+                <CountUpAnimation start={0} end={80} suffix="+" />
+                <div className="text-lg text-white/90 mt-2">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <CountUpAnimation start={0} end={100} suffix="+" />
+                <div className="text-lg text-white/90 mt-2">Ongoing Clients</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -71,17 +84,6 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-2xl mx-auto">
-              <div className="bg-card rounded-2xl p-8 shadow-card">
-                <div className="text-5xl font-bold text-primary mb-2">80+</div>
-                <div className="text-lg text-foreground">Years Experience</div>
-              </div>
-              <div className="bg-card rounded-2xl p-8 shadow-card">
-                <div className="text-5xl font-bold text-primary mb-2">100+</div>
-                <div className="text-lg text-foreground">Ongoing Clients</div>
-              </div>
-            </div>
             
             <div className="text-lg font-bold text-primary bg-primary/10 rounded-lg px-6 py-4 mb-12 border-l-4 border-primary">
               80% of Our Clients are Backed by Leading Institutional Investors

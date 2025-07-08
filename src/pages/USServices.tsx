@@ -162,6 +162,24 @@ const USServices = () => {
             </div>
           </div>
 
+          {/* Cross-Service CTA */}
+          <div className="bg-primary/5 rounded-2xl p-8 mb-16 text-center border border-primary/10">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Need India Services Too?
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              We also provide comprehensive accounting, tax, and business services for companies operating in India. Navigate both markets seamlessly with our expert guidance.
+            </p>
+            <Button 
+              variant="outline" 
+              size="lg"
+              onClick={() => window.location.href = '/india-services'}
+              className="border-primary text-primary hover:bg-primary hover:text-white"
+            >
+              Explore India Services →
+            </Button>
+          </div>
+
           {/* CTA Section */}
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Expand to the US?</h2>
