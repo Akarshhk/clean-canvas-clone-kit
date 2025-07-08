@@ -101,67 +101,92 @@ const AboutUs = () => {
           </div>
 
           {/* About Content */}
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="text-center mb-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Who We Are
               </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                A full-service accountancy firm delivering excellence through innovation and expertise
+              </p>
             </div>
             
-            <div className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4 p-4 bg-primary/5 rounded-lg border-l-4 border-primary">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="font-bold text-primary mb-2">Full-Service Accountancy</h4>
-                      <p className="text-foreground/80">Headquartered in Bengaluru, synonymous with accurate accounting, compliance and timely corporate secretarial work for decades.</p>
-                    </div>
+            {/* Modern Card Grid */}
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Full-Service Excellence */}
+              <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="relative">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
-                  
-                  <div className="flex items-start space-x-4 p-4 bg-secondary/5 rounded-lg border-l-4 border-secondary">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="font-bold text-secondary mb-2">Diverse Client Portfolio</h4>
-                      <p className="text-foreground/80">Serving entrepreneurs, trusts, firms, corporates and multinationals across multiple industries with equal dedication.</p>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Full-Service Excellence</h3>
+                  <p className="text-foreground/70 leading-relaxed">Bengaluru-based expertise in accounting, compliance, and corporate secretarial work spanning decades</p>
+                </div>
+              </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex items-start space-x-4 p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="font-bold text-accent mb-2">Expert Documentation</h4>
-                      <p className="text-foreground">Years of experience in critical financial documentation, enabling clients to focus on core operations.</p>
-                    </div>
+              {/* Diverse Clientele */}
+              <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary/5 to-secondary/10 p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="relative">
+                  <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
                   </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Diverse Clientele</h3>
+                  <p className="text-foreground/70 leading-relaxed">Entrepreneurs to multinationals - serving all with equal dedication across industries</p>
+                </div>
+              </div>
 
-                  <div className="flex items-start space-x-4 p-4 bg-secondary/5 rounded-lg border-l-4 border-secondary">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="font-bold text-secondary mb-2">Long-Standing Relationships</h4>
-                      <p className="text-foreground">Building meaningful partnerships with clients as one of our biggest successes over the years.</p>
-                    </div>
+              {/* Strategic Partnership */}
+              <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-accent/5 to-accent/10 p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="relative">
+                  <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mb-6">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">Strategic Partnership</h3>
+                  <p className="text-foreground/70 leading-relaxed">Beyond bookkeeping - actively driving growth through strategic support and insights</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Capabilities */}
+            <div className="mt-16 grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-8">Our Capabilities</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-foreground">Expert Financial Documentation</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-foreground">Comprehensive Service Portfolio</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-foreground">Regulatory Compliance Mastery</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span className="text-foreground">Long-Standing Client Relationships</span>
                   </div>
                 </div>
-                </div>
+              </div>
 
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4 p-4 bg-primary/5 rounded-lg border-l-4 border-primary">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="font-bold text-primary mb-2">Comprehensive Services</h4>
-                      <p className="text-foreground/80">Payroll management, bookkeeping, tax compliance, regulatory compliance, audit coordination, and customized solutions.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4 p-4 bg-secondary/5 rounded-lg border-l-4 border-secondary">
-                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="font-bold text-secondary mb-2">Growth Partnership</h4>
-                      <p className="text-foreground/80">Beyond bookkeeping - actively seeking opportunities and providing strategic support for business growth.</p>
-                    </div>
-                  </div>
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-8">Our Promise</h3>
+                <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8">
+                  <p className="text-foreground/80 text-lg leading-relaxed">
+                    We enable businesses to focus on their core operations while we handle the complexities of financial management, 
+                    compliance, and growth strategy with precision and care.
+                  </p>
                 </div>
               </div>
             </div>
