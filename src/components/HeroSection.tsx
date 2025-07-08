@@ -21,9 +21,9 @@ const HeroSection = () => {
           <div className="animate-fade-in">
             <h1 className="font-bold leading-tight text-white">
               <span className="text-5xl md:text-7xl">AccountsWhiz</span> <br />
-              <span className="text-3xl md:text-5xl text-professional-accent mt-2 block">STRATEGIC</span> <br />
-              <span className="text-3xl md:text-5xl text-professional-accent">FINANCIAL SERVICES</span> <br />
-              <span className="text-3xl md:text-5xl text-professional-accent">FOR GROWTH</span>
+              <span className="text-3xl md:text-5xl text-professional-accent mt-2 block">strategic</span> <br />
+              <span className="text-3xl md:text-5xl text-professional-accent">financial services</span> <br />
+              <span className="text-3xl md:text-5xl text-professional-accent">for growth</span>
             </h1>
           </div>
         </div>
@@ -83,42 +83,75 @@ const HeroSection = () => {
               </div>
             </div>
             
-            <div className="text-sm text-foreground/60 mb-12">
+            <div className="text-lg font-bold text-primary bg-primary/10 rounded-lg px-6 py-4 mb-12 border-l-4 border-primary">
               80% of Our Clients are Backed by Leading Institutional Investors
             </div>
 
-            {/* Client Logos */}
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
-              <img 
-                src="/lovable-uploads/139beeb5-2b81-4a12-8d1a-c9a8132abc04.png" 
-                alt="B2Brain" 
-                className="h-8 w-auto grayscale hover:grayscale-0 transition-all duration-300"
-              />
-              <img 
-                src="/lovable-uploads/24c70498-81ad-430a-a163-06e60552bc36.png" 
-                alt="HungerBox" 
-                className="h-8 w-auto grayscale hover:grayscale-0 transition-all duration-300"
-              />
-              <img 
-                src="/lovable-uploads/ab64bec2-0f6e-4361-af2a-509284516dd1.png" 
-                alt="Innoventes" 
-                className="h-8 w-auto grayscale hover:grayscale-0 transition-all duration-300"
-              />
-              <img 
-                src="/lovable-uploads/7f763ff8-c7d0-4020-85fb-63a170489495.png" 
-                alt="Plum" 
-                className="h-8 w-auto grayscale hover:grayscale-0 transition-all duration-300"
-              />
-              <img 
-                src="/lovable-uploads/bb254e8b-3518-4cb9-b5da-383872f86efb.png" 
-                alt="Rural Shores" 
-                className="h-8 w-auto grayscale hover:grayscale-0 transition-all duration-300"
-              />
-              <img 
-                src="/lovable-uploads/ce367f56-6e60-43b8-ac2b-ac4ee842f4c2.png" 
-                alt="Elevation Tax and Accounting" 
-                className="h-8 w-auto grayscale hover:grayscale-0 transition-all duration-300"
-              />
+            {/* Client Logos - Animated Slider */}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-[scroll_20s_linear_infinite] hover:pause gap-12 items-center">
+                <img 
+                  src="/lovable-uploads/139beeb5-2b81-4a12-8d1a-c9a8132abc04.png" 
+                  alt="B2Brain" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/24c70498-81ad-430a-a163-06e60552bc36.png" 
+                  alt="HungerBox" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/ab64bec2-0f6e-4361-af2a-509284516dd1.png" 
+                  alt="Innoventes" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/7f763ff8-c7d0-4020-85fb-63a170489495.png" 
+                  alt="Plum" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/bb254e8b-3518-4cb9-b5da-383872f86efb.png" 
+                  alt="Rural Shores" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/ce367f56-6e60-43b8-ac2b-ac4ee842f4c2.png" 
+                  alt="Elevation Tax and Accounting" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                {/* Duplicate for seamless loop */}
+                <img 
+                  src="/lovable-uploads/139beeb5-2b81-4a12-8d1a-c9a8132abc04.png" 
+                  alt="B2Brain" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/24c70498-81ad-430a-a163-06e60552bc36.png" 
+                  alt="HungerBox" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/ab64bec2-0f6e-4361-af2a-509284516dd1.png" 
+                  alt="Innoventes" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/7f763ff8-c7d0-4020-85fb-63a170489495.png" 
+                  alt="Plum" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/bb254e8b-3518-4cb9-b5da-383872f86efb.png" 
+                  alt="Rural Shores" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+                <img 
+                  src="/lovable-uploads/ce367f56-6e60-43b8-ac2b-ac4ee842f4c2.png" 
+                  alt="Elevation Tax and Accounting" 
+                  className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                />
+              </div>
             </div>
           </div>
         </div>

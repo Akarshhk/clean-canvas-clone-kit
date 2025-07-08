@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building, Calculator, Users, FileText, Shield, TrendingUp } from "lucide-react";
+import { Building, Calculator, Users, FileText, Shield, TrendingUp, ChevronDown, ChevronUp } from "lucide-react";
 
 const services = [
   {
@@ -65,6 +66,12 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const [expandedService, setExpandedService] = useState<number | null>(null);
+
+  const toggleService = (index: number) => {
+    setExpandedService(expandedService === index ? null : index);
+  };
+
   return (
     <section id="services" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
@@ -79,35 +86,59 @@ const ServicesSection = () => {
           </p>
         </div>
         
-        {/* Services Grid */}
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        {/* Modern Services Cards */}
+        <div className="max-w-4xl mx-auto space-y-4">
           {services.map((service, index) => (
-            <Card 
+            <div 
               key={index} 
-              className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-0 shadow-card"
+              className="bg-white rounded-2xl shadow-lg border border-border/50 overflow-hidden transition-all duration-300 hover:shadow-elegant"
             >
-              <CardHeader className="pb-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="w-8 h-8 text-primary" />
+              <div 
+                className="flex items-center justify-between p-6 cursor-pointer hover:bg-muted/30 transition-colors"
+                onClick={() => toggleService(index)}
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <service.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-foreground">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mt-1">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-                <CardTitle className="text-xl font-semibold text-foreground mb-2">
-                  {service.title}
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
-                      <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+                <div className="flex-shrink-0">
+                  {expandedService === index ? (
+                    <ChevronUp className="w-5 h-5 text-primary" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-muted-foreground" />
+                  )}
+                </div>
+              </div>
+              
+              {/* Expanded Content */}
+              <div className={`transition-all duration-300 ease-in-out ${
+                expandedService === index 
+                  ? 'max-h-96 opacity-100' 
+                  : 'max-h-0 opacity-0'
+              } overflow-hidden`}>
+                <div className="px-6 pb-6 pt-2">
+                  <div className="pl-18">
+                    <ul className="space-y-3">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-muted-foreground">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-sm leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
         
