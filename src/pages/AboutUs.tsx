@@ -63,29 +63,41 @@ const AboutUs = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 mb-20">
-            <Card className="shadow-card border-0 bg-gradient-to-br from-primary/5 to-secondary/5 border-l-4 border-l-primary">
-              <CardContent className="p-8 text-center">
-                <h2 className="text-4xl font-bold text-primary mb-6 font-cursive relative">
-                  <span className="bg-gradient-primary bg-clip-text text-transparent">Our Vision</span>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-primary rounded-full"></div>
-                </h2>
-                <p className="text-lg text-foreground leading-relaxed">
-                  To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="relative">
+              <div className="bg-white p-8 rounded-lg shadow-lg relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+                <div className="absolute left-1 top-0 w-8 h-full">
+                  <svg viewBox="0 0 32 400" className="w-full h-full">
+                    <path d="M0 0 Q16 50 32 100 Q16 150 0 200 Q16 250 32 300 Q16 350 0 400" 
+                          fill="hsl(var(--primary))" opacity="0.1"/>
+                  </svg>
+                </div>
+                <div className="relative z-10">
+                  <h2 className="text-3xl font-bold text-primary mb-4">Our Vision:</h2>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
+                  </p>
+                </div>
+              </div>
+            </div>
             
-            <Card className="shadow-card border-0 bg-gradient-to-br from-secondary/5 to-primary/5 border-l-4 border-l-secondary">
-              <CardContent className="p-8 text-center">
-                <h2 className="text-4xl font-bold text-primary mb-6 font-cursive relative">
-                  <span className="bg-gradient-secondary bg-clip-text text-transparent">Our Mission</span>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-secondary rounded-full"></div>
-                </h2>
-                <p className="text-lg text-foreground leading-relaxed">
-                  To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="relative">
+              <div className="bg-white p-8 rounded-lg shadow-lg relative overflow-hidden">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+                <div className="absolute left-1 top-0 w-8 h-full">
+                  <svg viewBox="0 0 32 400" className="w-full h-full">
+                    <path d="M0 0 Q16 50 32 100 Q16 150 0 200 Q16 250 32 300 Q16 350 0 400" 
+                          fill="hsl(var(--primary))" opacity="0.1"/>
+                  </svg>
+                </div>
+                <div className="relative z-10">
+                  <h2 className="text-3xl font-bold text-primary mb-4">Our Mission:</h2>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* About Content */}
@@ -118,7 +130,15 @@ const AboutUs = () => {
                   <div className="flex items-start space-x-4 p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h4 className="font-bold text-accent mb-2">Long-Standing Relationships</h4>
+                      <h4 className="font-bold text-accent mb-2">Expert Documentation</h4>
+                      <p className="text-foreground/80">Years of experience in critical financial documentation, enabling clients to focus on core operations.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4 p-4 bg-secondary/5 rounded-lg border-l-4 border-secondary">
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-bold text-secondary mb-2">Long-Standing Relationships</h4>
                       <p className="text-foreground/80">Building meaningful partnerships with clients as one of our biggest successes over the years.</p>
                     </div>
                   </div>
@@ -138,14 +158,6 @@ const AboutUs = () => {
                     <div>
                       <h4 className="font-bold text-secondary mb-2">Growth Partnership</h4>
                       <p className="text-foreground/80">Beyond bookkeeping - actively seeking opportunities and providing strategic support for business growth.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4 p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
-                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="font-bold text-accent mb-2">Expert Documentation</h4>
-                      <p className="text-foreground/80">Years of experience in critical financial documentation, enabling clients to focus on core operations.</p>
                     </div>
                   </div>
                 </div>
