@@ -63,19 +63,25 @@ const AboutUs = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 mb-20">
-            <Card className="shadow-card border-0">
+            <Card className="shadow-card border-0 bg-gradient-to-br from-primary/5 to-secondary/5 border-l-4 border-l-primary">
               <CardContent className="p-8 text-center">
-                <h2 className="text-2xl font-bold text-primary mb-4">Our Vision</h2>
-                <p className="text-lg text-foreground">
+                <h2 className="text-4xl font-bold text-primary mb-6 font-cursive relative">
+                  <span className="bg-gradient-primary bg-clip-text text-transparent">Our Vision</span>
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-primary rounded-full"></div>
+                </h2>
+                <p className="text-lg text-foreground leading-relaxed">
                   To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="shadow-card border-0">
+            <Card className="shadow-card border-0 bg-gradient-to-br from-secondary/5 to-primary/5 border-l-4 border-l-secondary">
               <CardContent className="p-8 text-center">
-                <h2 className="text-2xl font-bold text-primary mb-4">Our Mission</h2>
-                <p className="text-lg text-foreground">
+                <h2 className="text-4xl font-bold text-primary mb-6 font-cursive relative">
+                  <span className="bg-gradient-secondary bg-clip-text text-transparent">Our Mission</span>
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-secondary rounded-full"></div>
+                </h2>
+                <p className="text-lg text-foreground leading-relaxed">
                   To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
                 </p>
               </CardContent>
@@ -90,26 +96,60 @@ const AboutUs = () => {
               </h2>
             </div>
             
-            <div className="prose prose-lg max-w-none text-foreground/80">
-              <p className="text-lg leading-relaxed mb-6">
-                Paying taxes, performing accounting tasks, ensuring statutory compliances, filing returns put forward by government authorities and so on, the very thought of working with these numbers can be nerve-wracking for business owners. Worry not. You have found the right partner in Accountswhiz India Pvt Ltd. We are a full-service accountancy firm with its headquarters in Bengaluru. For decades, our name has been synonymous with accurate accounting, compliance and timely corporate Secretarial work.
-              </p>
-              
-              <p className="text-lg leading-relaxed mb-6">
-                We strive to provide reliable accounting and related services to small and mid-sized companies. Over the years, we have served companies across a cross-section of industries. Our client roster includes entrepreneurs, trusts, firms, corporates and a number of multinationals. No matter what the size of a company may be, all our clients are equally important to us. We consider our long-standing relationships with our clients to be amongst our biggest successes.
-              </p>
+            <div className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4 p-4 bg-primary/5 rounded-lg border-l-4 border-primary">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-bold text-primary mb-2">Full-Service Accountancy</h4>
+                      <p className="text-foreground/80">Headquartered in Bengaluru, synonymous with accurate accounting, compliance and timely corporate secretarial work for decades.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-4 p-4 bg-secondary/5 rounded-lg border-l-4 border-secondary">
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-bold text-secondary mb-2">Diverse Client Portfolio</h4>
+                      <p className="text-foreground/80">Serving entrepreneurs, trusts, firms, corporates and multinationals across multiple industries with equal dedication.</p>
+                    </div>
+                  </div>
 
-              <h3 className="text-2xl font-bold text-foreground mt-12 mb-6">
-                From Accounting To Regulatory Compliance And Everything In Between
-              </h3>
-              
-              <p className="text-lg leading-relaxed mb-6">
-                Accountswhiz India Pvt Ltd offers a full bouquet of professional advisory and executionary services. Our services include payroll management, bookkeeping, tax compliance, regulatory compliance of state and central laws, audits co-ordination, document processing, and a range of other customized services.
-              </p>
-              
-              <p className="text-lg leading-relaxed mb-12">
-                We partner with businesses not just to keep their books in order but also to help each venture grow. We are constantly on the lookout for new opportunities that could prove beneficial to our clients. Backed by knowledge gained from years of experience, our team helps you put the financial and other documentation crucial to the firm's growth in place helping you focus on your core operations. For all our customers, we offer hands-on support that can help them achieve their short term and long term goals.
-              </p>
+                  <div className="flex items-start space-x-4 p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-bold text-accent mb-2">Long-Standing Relationships</h4>
+                      <p className="text-foreground/80">Building meaningful partnerships with clients as one of our biggest successes over the years.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4 p-4 bg-primary/5 rounded-lg border-l-4 border-primary">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-bold text-primary mb-2">Comprehensive Services</h4>
+                      <p className="text-foreground/80">Payroll management, bookkeeping, tax compliance, regulatory compliance, audit coordination, and customized solutions.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4 p-4 bg-secondary/5 rounded-lg border-l-4 border-secondary">
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-bold text-secondary mb-2">Growth Partnership</h4>
+                      <p className="text-foreground/80">Beyond bookkeeping - actively seeking opportunities and providing strategic support for business growth.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4 p-4 bg-accent/5 rounded-lg border-l-4 border-accent">
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h4 className="font-bold text-accent mb-2">Expert Documentation</h4>
+                      <p className="text-foreground/80">Years of experience in critical financial documentation, enabling clients to focus on core operations.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -224,9 +264,9 @@ const AboutUs = () => {
                   <img 
                     src={member.image}
                     alt={member.name}
-                    className="w-32 h-32 rounded-full object-cover mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+                    className="w-48 h-56 rounded-lg object-cover mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="absolute inset-0 rounded-lg bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white font-medium text-sm">View Details</span>
                   </div>
                 </div>

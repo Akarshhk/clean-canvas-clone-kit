@@ -28,7 +28,7 @@ const TeamModal = ({ member, isOpen, onClose }: TeamModalProps) => {
               <img 
                 src={member.image} 
                 alt={member.name}
-                className="w-32 h-32 rounded-full object-cover mx-auto shadow-lg"
+                className="w-40 h-48 rounded-lg object-cover mx-auto shadow-lg"
               />
             </div>
             <div>
