@@ -177,6 +177,50 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* Our Expert Team Section */}
+      <section className="py-20 bg-professional-light">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Our Expert Team
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="text-center cursor-pointer group transition-all duration-300"
+                onClick={() => handleMemberClick(member)}
+              >
+                <div className="relative mb-4">
+                  <img 
+                    src={member.image}
+                    alt={member.name}
+                    className="w-48 h-56 rounded-lg object-cover mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 rounded-lg bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white font-medium text-sm">View Details</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-primary/80 transition-colors">
+                  {member.name}
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  {member.position}
+                </p>
+              </div>
+            ))}
+          </div>
+          
+          <TeamModal
+            member={selectedMember}
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
+        </div>
+      </section>
+
       {/* Who We Are - Interactive Timeline */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
@@ -346,52 +390,6 @@ const AboutUs = () => {
           </Card>
         </div>
       </section>
-
-      {/* Our Expert Team Section */}
-      <section className="py-20 bg-professional-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Our Expert Team
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="text-center cursor-pointer group transition-all duration-300"
-                onClick={() => handleMemberClick(member)}
-              >
-                <div className="relative mb-4">
-                  <img 
-                    src={member.image}
-                    alt={member.name}
-                    className="w-48 h-56 rounded-lg object-cover mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 rounded-lg bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white font-medium text-sm">View Details</span>
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-primary/80 transition-colors">
-                  {member.name}
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  {member.position}
-                </p>
-              </div>
-            ))}
-          </div>
-          
-          <TeamModal
-            member={selectedMember}
-            isOpen={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
-          />
-        </div>
-      </section>
-
-
 
       {/* Footer */}
       <footer className="bg-professional-dark text-white py-12">
