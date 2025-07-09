@@ -107,9 +107,6 @@ const Navigation = () => {
                 } else {
                   // If we're on another page, navigate to home page with contact hash
                   window.location.href = '/#contact';
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
             >
