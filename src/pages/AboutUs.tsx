@@ -115,30 +115,36 @@ const AboutUs = () => {
       {/* Our Purpose - Mission and Vision */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
               Our Purpose
             </h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="flex flex-col gap-10">
               {/* Our Vision */}
-              <div className="relative p-8 rounded-lg bg-white border border-border h-64">
-                <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
-                <div className="h-40 overflow-y-auto pr-2">
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
-                  </p>
-                </div>
+              <div
+                className="relative bg-white border-2 border-blue-400 rounded-lg p-10 shadow-none mb-4"
+                style={{
+                  clipPath:
+                    "polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%)",
+                }}
+              >
+                <h3 className="text-2xl font-extrabold text-black mb-3">Our Vision</h3>
+                <p className="text-lg text-black leading-relaxed">
+                  To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
+                </p>
               </div>
-
               {/* Our Mission */}
-              <div className="relative p-8 rounded-lg bg-white border border-border h-64">
-                <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
-                <div className="h-40 overflow-y-auto pr-2">
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
-                  </p>
-                </div>
+              <div
+                className="relative bg-white border-2 border-blue-400 rounded-lg p-10 shadow-none"
+                style={{
+                  clipPath:
+                    "polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%)",
+                }}
+              >
+                <h3 className="text-2xl font-extrabold text-black mb-3">Our Mission</h3>
+                <p className="text-lg text-black leading-relaxed">
+                  To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
+                </p>
               </div>
             </div>
           </div>
