@@ -103,11 +103,7 @@
 
   /* Timeline styles */
   .timeline-line {
-    animation: line-grow 2s ease-in-out forwards;
-  }
-
-  .timeline-item {
-    animation: timeline-reveal 0.6s ease-out forwards;
+    background: linear-gradient(to bottom, hsl(var(--primary) / 0.2), hsl(var(--primary) / 0.2));
   }
 
   .timeline-item:hover .timeline-dot {

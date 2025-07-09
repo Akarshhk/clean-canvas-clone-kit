@@ -9,37 +9,57 @@ const AboutUs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-      const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineLine = document.querySelector('.timeline-line') as HTMLElement;
     
-      timelineItems.forEach((item) => {
-        item.classList.add('opacity-0', 'translate-y-8');
-        item.classList.remove('animate-fade-in');
-        item.setAttribute('data-has-animated', 'false');
-      });
+    // Ensure all items start invisible and untransformed
+    timelineItems.forEach((item, index) => {
+      const element = item as HTMLElement;
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      element.setAttribute('data-has-animated', 'false');
+    });
+
+    // Set initial line height to 0
+    if (timelineLine) {
+      timelineLine.style.height = '0%';
+      timelineLine.style.transition = 'height 0.3s ease-out';
+    }
     
-      let observer: IntersectionObserver | null = null;
-    
-      observer = new IntersectionObserver(
-        (entries, obs) => {
-          entries.forEach((entry) => {
-            const target = entry.target as HTMLElement;
-            // Only animate if not already done
-            if (entry.isIntersecting && target.getAttribute('data-has-animated') !== 'true') {
-              target.classList.add('animate-fade-in');
-              target.classList.remove('opacity-0', 'translate-y-8');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const target = entry.target as HTMLElement;
+          const index = Array.from(timelineItems).indexOf(target);
+          
+          if (entry.isIntersecting && target.getAttribute('data-has-animated') !== 'true') {
+            // Animate the item with a slight delay
+            setTimeout(() => {
+              target.style.opacity = '1';
+              target.style.transform = 'translateY(0)';
               target.setAttribute('data-has-animated', 'true');
+            }, index * 100); // Stagger animation
+            
+            // Update timeline line height based on scroll progress
+            if (timelineLine) {
+              const progress = ((index + 1) / timelineItems.length) * 100;
+              timelineLine.style.height = `${progress}%`;
+              timelineLine.style.background = `linear-gradient(to bottom, hsl(var(--primary)) 0%, hsl(var(--primary)) ${progress}%, hsl(var(--primary) / 0.2) ${progress}%, hsl(var(--primary) / 0.2) 100%)`;
             }
-          });
-        },
-        { threshold: 0.3 }
-      );
+          }
+        });
+      },
+      { 
+        threshold: 0.2,
+        rootMargin: '-50px 0px'
+      }
+    );
     
-      timelineItems.forEach((item) => observer!.observe(item));
+    timelineItems.forEach((item) => observer.observe(item));
     
-      return () => {
-        if (observer) observer.disconnect();
-      };
-    }, []);
+    return () => observer.disconnect();
+  }, []);
 
 
   const teamMembers = [
@@ -166,8 +186,7 @@ const AboutUs = () => {
               ].map((item, index) => (
                 <div 
                   key={index}
-                  className="relative flex items-start group timeline-item opacity-0 translate-y-8"
-                  style={{ animationDelay: `${index * 0.2}s` }}
+                  className="relative flex items-start group timeline-item"
                 >
                   {/* Timeline Dot */}
                   <div className="relative z-10 w-16 h-16 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 cursor-pointer timeline-dot">

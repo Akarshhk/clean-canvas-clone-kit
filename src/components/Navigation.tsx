@@ -15,7 +15,7 @@ const Navigation = () => {
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       {/* Contact info bar with social media */}
-      <div className="bg-professional-light px-4 py-2">
+      <div className="bg-professional-light px-4 py-2 hidden md:block">
         <div className="container mx-auto flex justify-between items-center">
           {/* Social Media Icons - Left side */}
           <div className="flex items-center gap-4">
@@ -42,7 +42,7 @@ const Navigation = () => {
           </div>
           
           {/* Contact info - Right side */}
-          <div className="flex items-center gap-6 text-sm text-professional-gray">
+          <div className="hidden lg:flex items-center gap-6 text-sm text-professional-gray">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
               <span>+91 90080 34040</span>
