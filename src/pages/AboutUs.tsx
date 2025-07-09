@@ -120,29 +120,31 @@ const AboutUs = () => {
               Our Purpose
             </h2>
             <div className="flex flex-col gap-10">
-              {/* Our Vision */}
+              {/* Vision */}
               <div
-                className="relative bg-white border-2 border-blue-400 rounded-lg p-10 shadow-none mb-4"
+                className="relative bg-white border-2 rounded-lg p-10 shadow-none"
                 style={{
+                  borderColor: "#163d9e",
                   clipPath:
                     "polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%)",
                 }}
               >
-                <h3 className="text-2xl font-extrabold text-black mb-3">Our Vision</h3>
-                <p className="text-lg text-black leading-relaxed">
+                <h3 className="text-3xl font-extrabold text-black mb-4">Our Vision</h3>
+                <p className="text-xl text-black">
                   To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
                 </p>
               </div>
-              {/* Our Mission */}
+              {/* Mission */}
               <div
-                className="relative bg-white border-2 border-blue-400 rounded-lg p-10 shadow-none"
+                className="relative bg-white border-2 rounded-lg p-10 shadow-none"
                 style={{
+                  borderColor: "#163d9e",
                   clipPath:
                     "polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%)",
                 }}
               >
-                <h3 className="text-2xl font-extrabold text-black mb-3">Our Mission</h3>
-                <p className="text-lg text-black leading-relaxed">
+                <h3 className="text-3xl font-extrabold text-black mb-4">Our Mission</h3>
+                <p className="text-xl text-black">
                   To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
                 </p>
               </div>
