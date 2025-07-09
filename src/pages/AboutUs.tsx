@@ -170,7 +170,7 @@ const AboutUs = () => {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Timeline Dot */}
-                  <div className="relative z-10 w-16 h-16 bg-white rounded-full border-4 border-primary flex items-center justify-center group-hover:scale-110 transition-all duration-300 cursor-pointer timeline-dot">
+                  <div className="relative z-10 w-16 h-16 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 cursor-pointer timeline-dot">
                     <item.icon className="w-6 h-6 text-primary" />
                   </div>
                   
