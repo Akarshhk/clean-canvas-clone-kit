@@ -12,7 +12,6 @@ const AboutUs = () => {
       const timelineItems = document.querySelectorAll('.timeline-item');
     
       timelineItems.forEach((item) => {
-        item.classList.add('invisible-timeline');
         item.classList.add('opacity-0', 'translate-y-8');
         item.classList.remove('animate-fade-in');
         item.setAttribute('data-has-animated', 'false');
