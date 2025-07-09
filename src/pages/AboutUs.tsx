@@ -103,8 +103,8 @@ const AboutUs = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-red-500 to-red-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0" style:"background-color: #17181b;"></div>
+      <section className="py-20 bg-gradient-to-br from-grey-500 to-black-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             About Us
