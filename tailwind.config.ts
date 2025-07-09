@@ -112,6 +112,12 @@ export default {
 						height: '0'
 					}
 				}
+              'invisible-timeline': {
+                'opacity': '0 !important';
+                'pointer-events': 'none !important';
+                'transform': 'translateY(2rem)';
+                'transition': 'none !important';
+              }
 			},
 			animation: {
                 'fade-in': 'fade-in 0.7s cubic-bezier(.35,1.36,.4,1) forwards',
