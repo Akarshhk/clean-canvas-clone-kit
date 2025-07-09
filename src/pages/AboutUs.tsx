@@ -4,6 +4,47 @@ import { Card, CardContent } from "@/components/ui/card";
 import TeamModal from "@/components/TeamModal";
 import { Building2, Clock, Users, FileBarChart, Star, Handshake, Scale } from "lucide-react";
 
+// --- NotchedBox Component (inline, fully styled) ---
+const NotchedBox = ({ title, children }: { title: string; children: React.ReactNode }) => (
+  <div
+    style={{
+      background: "#fff",
+      border: "3px solid #163d9e",
+      borderRadius: 0,
+      padding: "2.5rem 2.8rem",
+      clipPath:
+        "polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 36px 100%, 0 calc(100% - 36px))",
+      marginBottom: "2.5rem",
+      minHeight: 280,
+      boxSizing: "border-box",
+      maxWidth: "100%",
+      width: "100%",
+    }}
+  >
+    <h3
+      style={{
+        fontWeight: 800,
+        fontSize: "2.3rem",
+        marginBottom: "1.3rem",
+        lineHeight: 1.1,
+        color: "#141414",
+      }}
+    >
+      {title}
+    </h3>
+    <div
+      style={{
+        fontSize: "1.5rem",
+        fontWeight: 400,
+        lineHeight: 1.3,
+        color: "#141414",
+      }}
+    >
+      {children}
+    </div>
+  </div>
+);
+
 const AboutUs = () => {
   const [selectedMember, setSelectedMember] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,7 +52,7 @@ const AboutUs = () => {
   useEffect(() => {
     const timelineItems = document.querySelectorAll('.timeline-item');
     const timelineLine = document.querySelector('.timeline-line') as HTMLElement;
-    
+
     // Ensure all items start invisible and untransformed
     timelineItems.forEach((item, index) => {
       const element = item as HTMLElement;
@@ -98,10 +139,10 @@ const AboutUs = () => {
     setIsModalOpen(true);
   };
 
-  return (
+   return (
     <div className="min-h-screen">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-[#17181b] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
@@ -112,43 +153,27 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Our Purpose - Mission and Vision */}
-      <section className="py-16 bg-background">
+      {/* Our Purpose - Notched Cards Section */}
+      <section className="py-16" style={{ background: "#fafbfc" }}>
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+          <div style={{ maxWidth: 900, margin: "0 auto", paddingLeft: 16, paddingRight: 16 }}>
+            <h2
+              className="text-4xl font-extrabold text-center mb-12 text-foreground"
+              style={{
+                fontWeight: 800,
+                fontSize: "2.6rem",
+                marginBottom: "3.5rem",
+                color: "#3a4150",
+              }}
+            >
               Our Purpose
             </h2>
-            <div className="flex flex-col gap-10">
-              {/* Vision */}
-              <div
-                className="relative bg-white border-2 rounded-lg p-10 shadow-none"
-                style={{
-                  borderColor: "#163d9e",
-                  clipPath:
-                    "polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%)",
-                }}
-              >
-                <h3 className="text-3xl font-extrabold text-black mb-4">Our Vision</h3>
-                <p className="text-xl text-black">
-                  To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
-                </p>
-              </div>
-              {/* Mission */}
-              <div
-                className="relative bg-white border-2 rounded-lg p-10 shadow-none"
-                style={{
-                  borderColor: "#163d9e",
-                  clipPath:
-                    "polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 0 100%)",
-                }}
-              >
-                <h3 className="text-3xl font-extrabold text-black mb-4">Our Mission</h3>
-                <p className="text-xl text-black">
-                  To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
-                </p>
-              </div>
-            </div>
+            <NotchedBox title="Our Vision">
+              To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
+            </NotchedBox>
+            <NotchedBox title="Our Mission">
+              To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
+            </NotchedBox>
           </div>
         </div>
       </section>
