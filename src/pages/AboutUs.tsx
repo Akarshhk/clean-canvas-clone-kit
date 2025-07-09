@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import TeamModal from "@/components/TeamModal";
@@ -6,6 +6,25 @@ import TeamModal from "@/components/TeamModal";
 const AboutUs = () => {
   const [selectedMember, setSelectedMember] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach((item) => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
 
   const teamMembers = [
     {
@@ -57,132 +76,99 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Our Purpose Card */}
-      <section className="py-20 bg-background">
+      {/* Our Purpose Card - Minimal Infosys Style */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="relative p-12 rounded-3xl bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-transparent border-2 border-blue-200/30 shadow-2xl backdrop-blur-sm">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-50/50 to-white/80 backdrop-blur-sm"></div>
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-                  Our Purpose:
-                </h2>
-                <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-4xl">
-                  Your One-Stop Shop For All Accounting & Compliance Needs. To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
-                </p>
-              </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative p-8 md:p-12 rounded-lg bg-white border border-border shadow-lg">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Our Purpose
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Your One-Stop Shop For All Accounting & Compliance Needs. To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Who We Are Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
+      {/* Who We Are - Interactive Timeline */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Who We Are
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-6"></div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Your trusted partner in financial excellence and business growth
             </p>
           </div>
           
-          {/* Interactive Feature Cards */}
-          <div className="grid gap-8 max-w-6xl mx-auto">
-            {/* Row 1 - Staggered Animation */}
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="group relative bg-white rounded-3xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-primary/30 animate-fade-in" style={{animationDelay: '0.1s'}}>
-                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-primary/80 transition-colors">Full-Service Excellence</h3>
-                  <p className="text-foreground/70 text-lg leading-relaxed">Full-service accountancy firm headquartered in Bengaluru</p>
-                </div>
-              </div>
-
-              <div className="group relative bg-white rounded-3xl p-8 shadow-xl border border-secondary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-secondary/30 animate-fade-in" style={{animationDelay: '0.2s'}}>
-                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-secondary to-secondary/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <h3 className="text-2xl font-bold text-secondary mb-4 group-hover:text-secondary/80 transition-colors">Decades of Experience</h3>
-                  <p className="text-foreground/70 text-lg leading-relaxed">Decades of experience in accounting, statutory compliance, and corporate secretarial services</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Row 2 */}
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="group relative bg-white rounded-3xl p-8 shadow-xl border border-accent/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-accent/30 animate-fade-in" style={{animationDelay: '0.3s'}}>
-                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-accent to-accent/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <h3 className="text-2xl font-bold text-accent mb-4 group-hover:text-accent/80 transition-colors">Diverse Clientele</h3>
-                  <p className="text-foreground/70 text-lg leading-relaxed">Serving startups, SMEs, trusts, corporates, and multinationals across various industries</p>
-                </div>
-              </div>
-
-              <div className="group relative bg-white rounded-3xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-primary/30 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <div className="pt-4">
-                  <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-primary/80 transition-colors">Comprehensive Expertise</h3>
-                  <p className="text-foreground/70 text-lg leading-relaxed">Expertise in tax filing, payroll, returns, and government compliance</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Row 3 - Three columns with enhanced animations */}
-            <div className="grid md:grid-cols-3 gap-6 mt-8">
-              <div className="group relative bg-gradient-to-br from-secondary/5 to-secondary/10 rounded-2xl p-6 border border-secondary/20 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in" style={{animationDelay: '0.5s'}}>
-                <div className="text-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-secondary to-secondary/70 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+          {/* Interactive Timeline */}
+          <div className="max-w-4xl mx-auto relative">
+            {/* Vertical Line */}
+            <div className="absolute left-8 top-0 w-0.5 bg-primary/20 h-full timeline-line"></div>
+            
+            {/* Timeline Items */}
+            <div className="space-y-8">
+              {[
+                { 
+                  title: "Full-Service Excellence", 
+                  description: "Full-service accountancy firm headquartered in Bengaluru",
+                  icon: "🏢"
+                },
+                { 
+                  title: "Decades of Experience", 
+                  description: "Decades of experience in accounting, statutory compliance, and corporate secretarial services",
+                  icon: "🕒"
+                },
+                { 
+                  title: "Diverse Clientele", 
+                  description: "Serving startups, SMEs, trusts, corporates, and multinationals across various industries",
+                  icon: "👥"
+                },
+                { 
+                  title: "Comprehensive Expertise", 
+                  description: "Expertise in tax filing, payroll, returns, and government compliance",
+                  icon: "📊"
+                },
+                { 
+                  title: "Trusted by Clients", 
+                  description: "Trusted by clients for accuracy, reliability, and timeliness",
+                  icon: "⭐"
+                },
+                { 
+                  title: "Long-Term Relationships", 
+                  description: "Committed to building long-term client relationships",
+                  icon: "🤝"
+                },
+                { 
+                  title: "Equal Care for All", 
+                  description: "Equal attention and care given to companies of all sizes",
+                  icon: "⚖️"
+                }
+              ].map((item, index) => (
+                <div 
+                  key={index}
+                  className="relative flex items-start group timeline-item opacity-0 translate-y-8"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  {/* Timeline Dot */}
+                  <div className="relative z-10 w-16 h-16 bg-white rounded-full border-4 border-primary flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-all duration-300 cursor-pointer timeline-dot">
+                    {item.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-secondary mb-3 group-hover:text-secondary/80 transition-colors">Trusted Excellence</h3>
-                  <p className="text-foreground/70 leading-relaxed">Trusted by clients for accuracy, reliability, and timeliness</p>
-                </div>
-              </div>
-
-              <div className="group relative bg-gradient-to-br from-accent/5 to-accent/10 rounded-2xl p-6 border border-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in" style={{animationDelay: '0.6s'}}>
-                <div className="text-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/70 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
+                  
+                  {/* Content */}
+                  <div className="ml-8 flex-1 bg-white rounded-lg p-6 shadow-md border border-border group-hover:shadow-lg transition-all duration-300 cursor-pointer timeline-content">
+                    <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-accent mb-3 group-hover:text-accent/80 transition-colors">Long-Term Commitment</h3>
-                  <p className="text-foreground/70 leading-relaxed">Committed to building long-term client relationships</p>
                 </div>
-              </div>
-
-              <div className="group relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 border border-primary/20 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in" style={{animationDelay: '0.7s'}}>
-                <div className="text-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-primary/80 transition-colors">Equal Care</h3>
-                  <p className="text-foreground/70 leading-relaxed">Equal attention and care given to companies of all sizes</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
