@@ -86,7 +86,7 @@ const HeroSection = () => {
 
             
             <div className="text-lg font-bold text-primary bg-primary/10 rounded-lg px-6 py-4 mb-12 border-l-4 border-primary">
-              80% of Our Clients are Backed by Leading Institutional Investors
+             80% of Our Clients are Marquee Investors Backed
             </div>
 
             {/* Client Logos - Animated Slider */}
