@@ -8,65 +8,43 @@ const AboutUs = () => {
   const [selectedMember, setSelectedMember] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // --- Timeline animation setup (ready to paste) ---
   useEffect(() => {
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach((item) => {
-      item.classList.add('opacity-0', 'translate-y-8');
-      item.classList.remove('animate-fade-in');
-    });
-
-    let observer: IntersectionObserver | null = null;
-
-    const enableObserver = () => {
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-fade-in');
-              entry.target.classList.remove('opacity-0', 'translate-y-8');
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      timelineItems.forEach((item) => observer!.observe(item));
-    };
-
-    // Only activate observer on first scroll
-    const handleFirstScroll = () => {
-      enableObserver();
-      window.removeEventListener('scroll', handleFirstScroll);
-    };
-    window.addEventListener('scroll', handleFirstScroll);
-
-    // Also clean up on unmount
-    return () => {
-      if (observer) observer.disconnect();
-      window.removeEventListener('scroll', handleFirstScroll);
-    };
-  }, []);
-
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach((item) => observer.observe(item));
-
-    // Scroll-based line color change
-    const handleScroll = () => {
-      const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-      const timelineLine = document.querySelector('.timeline-line');
-      if (timelineLine) {
-        const hue = Math.floor(scrollProgress * 60); // 0 to 60 degrees (red to yellow to green)
-        (timelineLine as HTMLElement).style.background = `linear-gradient(to bottom, hsl(${hue}, 70%, 50%), hsl(var(--primary) / 0.2))`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      timelineItems.forEach((item) => {
+        item.classList.add('opacity-0', 'translate-y-8');
+        item.classList.remove('animate-fade-in');
+      });
+    
+      let observer: IntersectionObserver | null = null;
+    
+      const enableObserver = () => {
+        observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        timelineItems.forEach((item) => observer!.observe(item));
+      };
+    
+      // Only activate observer on first scroll
+      const handleFirstScroll = () => {
+        enableObserver();
+        window.removeEventListener('scroll', handleFirstScroll);
+      };
+      window.addEventListener('scroll', handleFirstScroll);
+    
+      // Clean up
+      return () => {
+        if (observer) observer.disconnect();
+        window.removeEventListener('scroll', handleFirstScroll);
+      };
+    }, []);
 
   const teamMembers = [
     {
