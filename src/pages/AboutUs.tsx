@@ -112,17 +112,34 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Our Purpose Card - Minimal Infosys Style */}
+      {/* Our Purpose - Mission and Vision */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="relative p-8 md:p-12 rounded-lg bg-white border border-border">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Our Purpose
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Your One-Stop Shop For All Accounting & Compliance Needs. To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
-              </p>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+              Our Purpose
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Our Vision */}
+              <div className="relative p-8 rounded-lg bg-white border border-border h-64">
+                <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
+                <div className="h-40 overflow-y-auto pr-2">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
+                  </p>
+                </div>
+              </div>
+
+              {/* Our Mission */}
+              <div className="relative p-8 rounded-lg bg-white border border-border h-64">
+                <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+                <div className="h-40 overflow-y-auto pr-2">
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
