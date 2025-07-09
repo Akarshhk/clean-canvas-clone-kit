@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import TeamModal from "@/components/TeamModal";
+import { Building2, Clock, Users, FileBarChart, Star, Handshake, Scale } from "lucide-react";
 
 const AboutUs = () => {
   const [selectedMember, setSelectedMember] = useState<any>(null);
@@ -23,7 +24,22 @@ const AboutUs = () => {
     const timelineItems = document.querySelectorAll('.timeline-item');
     timelineItems.forEach((item) => observer.observe(item));
 
-    return () => observer.disconnect();
+    // Scroll-based line color change
+    const handleScroll = () => {
+      const scrollProgress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      const timelineLine = document.querySelector('.timeline-line');
+      if (timelineLine) {
+        const hue = Math.floor(scrollProgress * 60); // 0 to 60 degrees (red to yellow to green)
+        (timelineLine as HTMLElement).style.background = `linear-gradient(to bottom, hsl(${hue}, 70%, 50%), hsl(var(--primary) / 0.2))`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const teamMembers = [
@@ -115,37 +131,37 @@ const AboutUs = () => {
                 { 
                   title: "Full-Service Excellence", 
                   description: "Full-service accountancy firm headquartered in Bengaluru",
-                  icon: "🏢"
+                  icon: Building2
                 },
                 { 
                   title: "Decades of Experience", 
                   description: "Decades of experience in accounting, statutory compliance, and corporate secretarial services",
-                  icon: "🕒"
+                  icon: Clock
                 },
                 { 
                   title: "Diverse Clientele", 
                   description: "Serving startups, SMEs, trusts, corporates, and multinationals across various industries",
-                  icon: "👥"
+                  icon: Users
                 },
                 { 
                   title: "Comprehensive Expertise", 
                   description: "Expertise in tax filing, payroll, returns, and government compliance",
-                  icon: "📊"
+                  icon: FileBarChart
                 },
                 { 
                   title: "Trusted by Clients", 
                   description: "Trusted by clients for accuracy, reliability, and timeliness",
-                  icon: "⭐"
+                  icon: Star
                 },
                 { 
                   title: "Long-Term Relationships", 
                   description: "Committed to building long-term client relationships",
-                  icon: "🤝"
+                  icon: Handshake
                 },
                 { 
                   title: "Equal Care for All", 
                   description: "Equal attention and care given to companies of all sizes",
-                  icon: "⚖️"
+                  icon: Scale
                 }
               ].map((item, index) => (
                 <div 
@@ -154,8 +170,8 @@ const AboutUs = () => {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   {/* Timeline Dot */}
-                  <div className="relative z-10 w-16 h-16 bg-white rounded-full border-4 border-primary flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-all duration-300 cursor-pointer timeline-dot">
-                    {item.icon}
+                  <div className="relative z-10 w-16 h-16 bg-white rounded-full border-4 border-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 cursor-pointer timeline-dot">
+                    <item.icon className="w-6 h-6 text-primary" />
                   </div>
                   
                   {/* Content */}
