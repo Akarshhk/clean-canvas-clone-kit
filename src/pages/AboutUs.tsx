@@ -48,170 +48,139 @@ const AboutUs = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            About <span className="text-primary">AccountsWhiz</span>
+      <section className="py-20 bg-gradient-to-br from-red-500 to-red-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            About Us
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Your One-Stop Shop For All Accounting & Compliance Needs
-          </p>
         </div>
       </section>
 
-      {/* Vision & Mission */}
+      {/* Our Purpose Card */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 mb-20">
-            <div className="relative">
-              <div className="bg-white p-8 rounded-lg shadow-lg relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
-                <div className="absolute left-1 top-0 w-8 h-full">
-                  <svg viewBox="0 0 32 400" className="w-full h-full">
-                    <path d="M0 0 Q16 50 32 100 Q16 150 0 200 Q16 250 32 300 Q16 350 0 400" 
-                          fill="hsl(var(--primary))" opacity="0.1"/>
-                  </svg>
-                </div>
-                <div className="relative z-10">
-                  <h2 className="text-3xl font-bold text-primary mb-4">Our Vision:</h2>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="bg-white p-8 rounded-lg shadow-lg relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
-                <div className="absolute left-1 top-0 w-8 h-full">
-                  <svg viewBox="0 0 32 400" className="w-full h-full">
-                    <path d="M0 0 Q16 50 32 100 Q16 150 0 200 Q16 250 32 300 Q16 350 0 400" 
-                          fill="hsl(var(--primary))" opacity="0.1"/>
-                  </svg>
-                </div>
-                <div className="relative z-10">
-                  <h2 className="text-3xl font-bold text-primary mb-4">Our Mission:</h2>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
-                  </p>
-                </div>
+          <div className="max-w-6xl mx-auto">
+            <div className="relative p-12 rounded-3xl bg-gradient-to-br from-blue-500/10 via-blue-400/5 to-transparent border-2 border-blue-200/30 shadow-2xl backdrop-blur-sm">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-50/50 to-white/80 backdrop-blur-sm"></div>
+              <div className="relative z-10">
+                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+                  Our Purpose:
+                </h2>
+                <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-4xl">
+                  Your One-Stop Shop For All Accounting & Compliance Needs. To maintain meaningful relationships with clients as we provide cost-effective, competitive and efficient financial solutions that include accounting, tax planning, auditing and business advisory services.
+                </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* About Content */}
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Who We Are
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6"></div>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Your trusted partner in financial excellence and business growth
-              </p>
+      {/* Who We Are Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in">
+              Who We Are
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mb-6"></div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
+              Your trusted partner in financial excellence and business growth
+            </p>
+          </div>
+          
+          {/* Interactive Feature Cards */}
+          <div className="grid gap-8 max-w-6xl mx-auto">
+            {/* Row 1 - Staggered Animation */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="group relative bg-white rounded-3xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-primary/30 animate-fade-in" style={{animationDelay: '0.1s'}}>
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <div className="pt-4">
+                  <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-primary/80 transition-colors">Full-Service Excellence</h3>
+                  <p className="text-foreground/70 text-lg leading-relaxed">Full-service accountancy firm headquartered in Bengaluru</p>
+                </div>
+              </div>
+
+              <div className="group relative bg-white rounded-3xl p-8 shadow-xl border border-secondary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-secondary/30 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-secondary to-secondary/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="pt-4">
+                  <h3 className="text-2xl font-bold text-secondary mb-4 group-hover:text-secondary/80 transition-colors">Decades of Experience</h3>
+                  <p className="text-foreground/70 text-lg leading-relaxed">Decades of experience in accounting, statutory compliance, and corporate secretarial services</p>
+                </div>
+              </div>
             </div>
-            
-            {/* Modern Points Grid */}
-            <div className="grid gap-6">
-              {/* Row 1 - Two columns */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="group p-6 bg-white rounded-2xl shadow-card border border-primary/10 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">Full-Service Excellence</h3>
-                      <p className="text-foreground/80">Full-service accountancy firm headquartered in Bengaluru</p>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="group p-6 bg-white rounded-2xl shadow-card border border-secondary/10 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
-                      <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-secondary mb-2">Decades of Experience</h3>
-                      <p className="text-foreground/80">Decades of experience in accounting, statutory compliance, and corporate secretarial services</p>
-                    </div>
-                  </div>
+            {/* Row 2 */}
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="group relative bg-white rounded-3xl p-8 shadow-xl border border-accent/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-accent/30 animate-fade-in" style={{animationDelay: '0.3s'}}>
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-accent to-accent/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div className="pt-4">
+                  <h3 className="text-2xl font-bold text-accent mb-4 group-hover:text-accent/80 transition-colors">Diverse Clientele</h3>
+                  <p className="text-foreground/70 text-lg leading-relaxed">Serving startups, SMEs, trusts, corporates, and multinationals across various industries</p>
                 </div>
               </div>
 
-              {/* Row 2 - Two columns */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="group p-6 bg-white rounded-2xl shadow-card border border-accent/10 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-accent mb-2">Diverse Clientele</h3>
-                      <p className="text-foreground/80">Serving startups, SMEs, trusts, corporates, and multinationals across various industries</p>
-                    </div>
-                  </div>
+              <div className="group relative bg-white rounded-3xl p-8 shadow-xl border border-primary/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:border-primary/30 animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-primary to-primary/60 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
                 </div>
+                <div className="pt-4">
+                  <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-primary/80 transition-colors">Comprehensive Expertise</h3>
+                  <p className="text-foreground/70 text-lg leading-relaxed">Expertise in tax filing, payroll, returns, and government compliance</p>
+                </div>
+              </div>
+            </div>
 
-                <div className="group p-6 bg-white rounded-2xl shadow-card border border-primary/10 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">Comprehensive Expertise</h3>
-                      <p className="text-foreground/80">Expertise in tax filing, payroll, returns, and government compliance</p>
-                    </div>
+            {/* Row 3 - Three columns with enhanced animations */}
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <div className="group relative bg-gradient-to-br from-secondary/5 to-secondary/10 rounded-2xl p-6 border border-secondary/20 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in" style={{animationDelay: '0.5s'}}>
+                <div className="text-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-secondary to-secondary/70 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
+                  <h3 className="text-xl font-bold text-secondary mb-3 group-hover:text-secondary/80 transition-colors">Trusted Excellence</h3>
+                  <p className="text-foreground/70 leading-relaxed">Trusted by clients for accuracy, reliability, and timeliness</p>
                 </div>
               </div>
 
-              {/* Row 3 - Three columns */}
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="group p-6 bg-white rounded-2xl shadow-card border border-secondary/10 hover:shadow-xl transition-all duration-300">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary/20 transition-colors">
-                      <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-secondary mb-2">Trusted Excellence</h3>
-                    <p className="text-foreground/80 text-sm">Trusted by clients for accuracy, reliability, and timeliness</p>
+              <div className="group relative bg-gradient-to-br from-accent/5 to-accent/10 rounded-2xl p-6 border border-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in" style={{animationDelay: '0.6s'}}>
+                <div className="text-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-accent to-accent/70 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
                   </div>
+                  <h3 className="text-xl font-bold text-accent mb-3 group-hover:text-accent/80 transition-colors">Long-Term Commitment</h3>
+                  <p className="text-foreground/70 leading-relaxed">Committed to building long-term client relationships</p>
                 </div>
+              </div>
 
-                <div className="group p-6 bg-white rounded-2xl shadow-card border border-accent/10 hover:shadow-xl transition-all duration-300">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
-                      <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-accent mb-2">Long-Term Commitment</h3>
-                    <p className="text-foreground/80 text-sm">Committed to building long-term client relationships</p>
+              <div className="group relative bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6 border border-primary/20 hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in" style={{animationDelay: '0.7s'}}>
+                <div className="text-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
-                </div>
-
-                <div className="group p-6 bg-white rounded-2xl shadow-card border border-primary/10 hover:shadow-xl transition-all duration-300">
-                  <div className="text-center">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Equal Care</h3>
-                    <p className="text-foreground/80 text-sm">Equal attention and care given to companies of all sizes</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-primary/80 transition-colors">Equal Care</h3>
+                  <p className="text-foreground/70 leading-relaxed">Equal attention and care given to companies of all sizes</p>
                 </div>
               </div>
             </div>
