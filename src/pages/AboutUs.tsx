@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import TeamModal from "@/components/TeamModal";
 import { Building2, Clock, Users, FileBarChart, Star, Handshake, Scale } from "lucide-react";
 
-// --- NotchedBox Component (inline, fully styled) ---
+// --- NotchedBox Component (inline, fully styled) --- Coded By - Akshar Vijay
 const NotchedBox = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div
     style={{
@@ -49,7 +49,7 @@ const AboutUs = () => {
   const [selectedMember, setSelectedMember] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
+  useEffect(() => { //Coded by - Akshar Vijay
     const timelineItems = document.querySelectorAll('.timeline-item');
     const timelineLine = document.querySelector('.timeline-line') as HTMLElement;
 
