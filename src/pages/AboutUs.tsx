@@ -14,6 +14,7 @@ const AboutUs = () => {
       timelineItems.forEach((item) => {
         item.classList.add('opacity-0', 'translate-y-8');
         item.classList.remove('animate-fade-in');
+        item.setAttribute('data-has-animated', 'false');
       });
     
       let observer: IntersectionObserver | null = null;
@@ -21,19 +22,19 @@ const AboutUs = () => {
       observer = new IntersectionObserver(
         (entries, obs) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-fade-in');
-              entry.target.classList.remove('opacity-0', 'translate-y-8');
-              obs.unobserve(entry.target); // Animate only once
+            const target = entry.target as HTMLElement;
+            // Only animate if not already done
+            if (entry.isIntersecting && target.getAttribute('data-has-animated') !== 'true') {
+              target.classList.add('animate-fade-in');
+              target.classList.remove('opacity-0', 'translate-y-8');
+              target.setAttribute('data-has-animated', 'true');
             }
           });
         },
-        { threshold: 0.15 }
+        { threshold: 0.3 }
       );
     
-      timelineItems.forEach((item) => {
-        observer!.observe(item);
-      });
+      timelineItems.forEach((item) => observer!.observe(item));
     
       return () => {
         if (observer) observer.disconnect();
