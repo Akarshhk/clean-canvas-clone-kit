@@ -10,6 +10,7 @@ const AboutUs = () => {
 
   useEffect(() => {
       const timelineItems = document.querySelectorAll('.timeline-item');
+    
       timelineItems.forEach((item) => {
         item.classList.add('opacity-0', 'translate-y-8');
         item.classList.remove('animate-fade-in');
@@ -17,34 +18,28 @@ const AboutUs = () => {
     
       let observer: IntersectionObserver | null = null;
     
-      const enableObserver = () => {
-        observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in');
-                entry.target.classList.remove('opacity-0', 'translate-y-8');
-              }
-            });
-          },
-          { threshold: 0.1 }
-        );
-        timelineItems.forEach((item) => observer!.observe(item));
-      };
+      observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-fade-in');
+              entry.target.classList.remove('opacity-0', 'translate-y-8');
+              obs.unobserve(entry.target); // Animate only once
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
     
-      // Only activate observer on first scroll
-      const handleFirstScroll = () => {
-        enableObserver();
-        window.removeEventListener('scroll', handleFirstScroll);
-      };
-      window.addEventListener('scroll', handleFirstScroll);
+      timelineItems.forEach((item) => {
+        observer!.observe(item);
+      });
     
-      // Clean up
       return () => {
         if (observer) observer.disconnect();
-        window.removeEventListener('scroll', handleFirstScroll);
       };
     }, []);
+
 
   const teamMembers = [
     {
