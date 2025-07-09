@@ -166,7 +166,6 @@ const AboutUs = () => {
                 color: "#3a4150",
               }}
             >
-              Our Purpose
             </h2>
             <NotchedBox title="Our Vision">
               To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
