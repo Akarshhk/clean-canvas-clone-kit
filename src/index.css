@@ -26,10 +26,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 27%;
 
-    --primary: 210 15% 25%;
+    --primary: 215 100% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 10% 20%;
+    --secondary: 215 100% 25%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 215 14% 89%;
@@ -45,12 +45,12 @@
     --input: 214 13% 91%;
     --ring: 213 94% 68%;
 
-    /* Corporate urban color palette */
-    --professional-blue: 210 15% 25%;
-    --professional-dark: 210 10% 15%;
-    --professional-light: 210 20% 96%;
-    --professional-gray: 210 8% 45%;
-    --professional-accent: 244 15% 75%;
+    /* Blue and white color palette based on logo */
+    --professional-blue: 215 100% 45%;
+    --professional-dark: 215 100% 25%;
+    --professional-light: 0 0% 100%;
+    --professional-gray: 215 15% 45%;
+    --professional-accent: 215 100% 60%;
     
     /* Font */
     --font-cursive: 'Dancing Script', cursive;

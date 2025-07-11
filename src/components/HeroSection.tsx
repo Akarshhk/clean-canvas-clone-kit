@@ -37,16 +37,16 @@ const HeroSection = () => {
             >
               <span className="text-5xl md:text-7xl">AccountsWhiz</span>
               <br />
-              <span className="text-3xl md:text-5xl text-professional-accent mt-2 block">
-                strategic
+              <span className="text-2xl md:text-4xl text-professional-accent mt-2 block">
+                Technology Driven Accounting &
               </span>
               <br />
-              <span className="text-3xl md:text-5xl text-professional-accent">
-                financial services
+              <span className="text-2xl md:text-4xl text-professional-accent">
+                Compliance Services for
               </span>
               <br />
-              <span className="text-3xl md:text-5xl text-professional-accent">
-                for growth
+              <span className="text-2xl md:text-4xl text-professional-accent">
+                Startups/SME's growth
               </span>
             </h1>
 
@@ -96,9 +96,9 @@ const HeroSection = () => {
               className="text-xl mb-12 text-foreground/80 leading-relaxed"
               itemProp="description"
             >
-              Enabling Founders and Finance Leaders to Focus on What Matters.
-              We provide a full suite of accounting, payroll, tax, compliance,
-              and advisory services tailored for startups, SMEs, and
+              Enabling Founders and Business Leaders to Focus on What Matters. 
+              We provide a full suite of accounting, payroll, tax, compliance, 
+              and advisory services tailored for startups, SMEs, and 
               cross-border businesses.
             </p>
             {/* CTA Buttons */}

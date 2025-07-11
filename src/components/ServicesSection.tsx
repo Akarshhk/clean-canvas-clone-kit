@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building, Calculator, Users, FileText, Shield, TrendingUp, ChevronDown, ChevronUp } from "lucide-react";
+import { Building, Calculator, Users, Receipt, Gavel, TrendingUp, ChevronDown, ChevronUp } from "lucide-react";
 
 const services = [
   {
@@ -34,7 +34,7 @@ const services = [
     ]
   },
   {
-    icon: FileText,
+    icon: Receipt,
     title: "Taxation & Filings",
     description: "Domestic and cross-border tax management for founders and companies",
     features: [
@@ -44,7 +44,7 @@ const services = [
     ]
   },
   {
-    icon: Shield,
+    icon: Gavel,
     title: "Corporate Secretarial & Governance",
     description: "Maintaining governance frameworks and legal filings",
     features: [
