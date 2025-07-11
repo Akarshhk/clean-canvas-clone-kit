@@ -55,7 +55,14 @@ const TestimonialsSection = () => {
           </h2>
         </div>
         <div className="max-w-4xl mx-auto">
-          <Carousel className="w-full" aria-label="Client testimonials carousel">
+          <Carousel 
+            className="w-full" 
+            aria-label="Client testimonials carousel"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
