@@ -146,7 +146,7 @@ const HeroSection = () => {
                 ]
                   .flatMap((logo) => [logo, logo]) // repeat for scroll
                   .map((logo, i) => (
-                    <f
+                    <img
                       key={i}
                       src={`/lovable-uploads/${logo.src}`}
                       alt={`${logo.alt} logo`}

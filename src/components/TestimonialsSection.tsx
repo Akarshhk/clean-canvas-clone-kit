@@ -1,39 +1,35 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star } from "lucide-react";
 
-// Paths for uploaded logos (replace with your /static path if needed)
-import ruralshores from "@/assets/ruralshores.png";
-import hungerbox from "@/assets/hungerbox.png";
-import b2bbrain from "@/assets/b2bbrain.png";
-import m360research from "@/assets/m360research.png";
+// Using public uploads for logos
 
 const testimonials = [
   {
     text: "We selected Accountswhiz as our partner for accounting, payroll, compliance & corporate secretarial activities. Accountswhiz management has a good level of experience & insight backed by a professional team that is always proactive to our requirements. In our 8+ years of association with them, we have met all our compliances on time.",
     name: "Karthik Mahadevan",
     designation: "Co-Founder",
-    logo: b2bbrain,
-    logoAlt: "B2BBrain"
+    logo: "/lovable-uploads/01c88e9e-b2c9-4d1e-a66a-a5ef1b63a4ae.png",
+    logoAlt: "B2Brain"
   },
   {
     text: "The decision of outsourcing the payroll services was one of the key & best decisions has been taken by M360 (M-Panels) in the year 2021. Accountswhiz has been seamlessly handling our payroll activity from past couple of years now and we are completely satisfied with their services. They have a thorough knowledge on payroll process & direct tax matters with rich professional experience. Very professional & optimistic approach and have been handling it efficiently and satisfactorily. Employees are satisfied with their queries and the income tax help desk provided by them.",
     name: "Kasi Viswanathan",
     designation: "Finance Controller",
-    logo: m360research,
+    logo: "/lovable-uploads/36a275fd-b2bb-4dbd-a6a6-8e46cf7a0add.png",
     logoAlt: "m360 Research"
   },
   {
     text: "Accountswhiz Team has been taking care of all the Secretarial and Accounting services for the Companies I am associated with as Founder. I have known Jayanthi Srinivasan, Geetha Suresh and her team for over 20 years, both as part of Pro-Active Solutech earlier as well as Accountswhiz India. Accountswhiz team takes total ownership for the responsibilities undertaken by them and ensure proper compliance. As Director of various Companies, this gives much comfort and satisfaction. A highly Reliable, Trustworthy partner for compliance.",
     name: "Srinivasan G",
     designation: "Co Founder",
-    logo: ruralshores,
+    logo: "/lovable-uploads/f0620ad2-bd21-4a24-b818-cb54019ff15e.png",
     logoAlt: "Rural Shores"
   },
   {
     text: "Accountswhiz has been our (EatGood technologies pvt ltd) trusted partner for payroll, accounting, book keeping, compliance and whole bunch of such services since almost a decade now and I have to thank them for always being a partner I can always rely on to support me during tough times. The team of Jayanthi Geetha n Sreenath have been great support systems for our organization since years and I cant thank them enough for that.",
     name: "Sandipan Mitra",
     designation: "Co-Founder & CEO",
-    logo: hungerbox,
+    logo: "/lovable-uploads/85f88535-faa4-44a1-84cf-364671ae1611.png",
     logoAlt: "HungerBox"
   }
 ];
