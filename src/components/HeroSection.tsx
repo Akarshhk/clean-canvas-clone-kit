@@ -37,15 +37,15 @@ const HeroSection = () => {
             >
               <span className="text-5xl md:text-7xl">AccountsWhiz</span>
               <br />
-              <span className="text-2xl md:text-4xl text-professional-accent mt-2 block">
+              <span className="text-2xl md:text-4xl text-muted-foreground mt-2 block">
                 Technology Driven Accounting &
               </span>
               <br />
-              <span className="text-2xl md:text-4xl text-professional-accent">
+              <span className="text-2xl md:text-4xl text-muted-foreground">
                 Compliance Services for
               </span>
               <br />
-              <span className="text-2xl md:text-4xl text-professional-accent">
+              <span className="text-2xl md:text-4xl text-muted-foreground">
                 Startups/SME's growth
               </span>
             </h1>

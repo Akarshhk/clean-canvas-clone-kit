@@ -105,7 +105,7 @@ const Navigation = () => {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/#contact"
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={(e) => {
                   e.preventDefault();

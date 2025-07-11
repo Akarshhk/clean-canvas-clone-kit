@@ -41,6 +41,29 @@ const USServices = () => {
         </div>
       </section>
 
+      {/* Why Choose Section */}
+      <section className="py-20 bg-card/30">
+        <div className="container mx-auto px-4">
+          <div className="bg-card rounded-2xl p-8">
+            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Our US Services?</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Expert US Team</h3>
+                <p className="text-muted-foreground">Certified professionals with deep US market knowledge</p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Cross-Border Expertise</h3>
+                <p className="text-muted-foreground">Seamless coordination between US and India operations</p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold mb-4 text-primary">Compliance Focused</h3>
+                <p className="text-muted-foreground">Stay compliant with all US federal and state requirements</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* US SMEs Section */}
       <section id="us-smes" className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -163,25 +186,6 @@ const USServices = () => {
             </Card>
           </div>
 
-          {/* Why Choose Section */}
-          <div className="bg-card rounded-2xl p-8 mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Our US Services?</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Expert US Team</h3>
-                <p className="text-muted-foreground">Certified professionals with deep US market knowledge</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Cross-Border Expertise</h3>
-                <p className="text-muted-foreground">Seamless coordination between US and India operations</p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Compliance Focused</h3>
-                <p className="text-muted-foreground">Stay compliant with all US federal and state requirements</p>
-              </div>
-            </div>
-          </div>
-
           {/* Cross-Service CTA */}
           <div className="bg-primary/5 rounded-2xl p-8 mb-16 text-center border border-primary/10">
             <h3 className="text-2xl font-bold text-foreground mb-4">
@@ -224,6 +228,64 @@ const USServices = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
+                <CardTitle className="text-primary">Accounting Outsourcing Services</CardTitle>
+                <CardDescription>
+                  Comprehensive accounting support for your firm's clients
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Full-service accounting support</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Financial reporting & analysis</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>General ledger maintenance</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Chart of accounts setup</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-primary">Book Keeping Outsourcing Services</CardTitle>
+                <CardDescription>
+                  Professional bookkeeping services to support your clients
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Monthly Bookkeeping</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Bank Reconciliations</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Transaction categorization</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>QuickBooks Clean-up</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border hover:shadow-lg transition-shadow">
+              <CardHeader>
                 <CardTitle className="text-primary">Outsourced Tax Preparation</CardTitle>
                 <CardDescription>
                   Scale your firm with our expert tax preparation services
@@ -253,28 +315,28 @@ const USServices = () => {
 
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-primary">Bookkeeping Support</CardTitle>
+                <CardTitle className="text-primary">AR & AP Management</CardTitle>
                 <CardDescription>
-                  Professional bookkeeping services to support your clients
+                  Efficient accounts receivable and payable management
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Monthly Bookkeeping</span>
+                    <span>Invoice processing & tracking</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Bank Reconciliations</span>
+                    <span>Payment collection management</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Financial Statement Preparation</span>
+                    <span>Vendor payment processing</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>QuickBooks Clean-up</span>
+                    <span>Aging reports & follow-ups</span>
                   </li>
                 </ul>
               </CardContent>
@@ -282,28 +344,28 @@ const USServices = () => {
 
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-primary">Audit & Review Support</CardTitle>
+                <CardTitle className="text-primary">Payroll Reconciliations</CardTitle>
                 <CardDescription>
-                  Comprehensive audit assistance and review services
+                  Accurate payroll processing and reconciliation services
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Audit Workpaper Preparation</span>
+                    <span>Payroll data verification</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Review Engagements</span>
+                    <span>Tax calculation accuracy</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Internal Control Testing</span>
+                    <span>Quarterly payroll reporting</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-primary" />
-                    <span>Compliance Testing</span>
+                    <span>Year-end compliance support</span>
                   </li>
                 </ul>
               </CardContent>
