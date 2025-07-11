@@ -7,7 +7,7 @@ const testimonialData = [
     text: "We selected Accountswhiz as our partner for accounting, payroll, compliance & corporate secretarial activities. Accountswhiz management has a good level of experience & insight backed by a professional team that is always proactive to our requirements. In our 8+ years of association with them, we have met all our compliances on time.",
     name: "Karthik Mahadevan",
     designation: "Co-Founder",
-    logo: "01c88e9e-b2c9-4d1e-a66a-a5ef1b63a4ae.png", // B2Brain
+    logo: "/lovable-uploads/01c88e9e-b2c9-4d1e-a66a-a5ef1b63a4ae.png", // B2Brain
     logoAlt: "B2Brain"
   },
   {
