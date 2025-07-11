@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 
 const ContactSection = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -21,22 +21,40 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section
+      id="contact"
+      className="py-20 bg-background"
+      itemScope
+      itemType="https://schema.org/ContactPage"
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Content */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Let's Start Your 
-              <span className="text-primary"> Financial Journey</span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8">
-              Ready to streamline your financial operations? Get in touch with our expert team 
-              to discuss how we can support your business growth.
-            </p>
-            
+          <aside itemScope itemType="https://schema.org/Organization">
+            <meta itemProp="name" content="AccountsWhiz" />
+            <header>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Let&apos;s Start Your
+                <span className="text-primary"> Financial Journey</span>
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Ready to streamline your financial operations? Get in touch with our expert team 
+                to discuss how we can support your business growth.
+              </p>
+            </header>
+            <address
+              className="not-italic mb-8"
+              itemProp="address"
+              itemScope
+              itemType="https://schema.org/PostalAddress"
+            >
+              <span itemProp="streetAddress">1386, 1st Floor, 28th Main, South End 'A' Cross,</span><br />
+              <span itemProp="addressLocality">Jayanagar 9th Block</span>,{" "}
+              <span itemProp="addressRegion">Bangalore</span> –{" "}
+              <span itemProp="postalCode">560069</span>
+            </address>
             {/* Contact Info Cards */}
-            <div className="space-y-6">
+            <div className="space-y-6" itemScope itemType="https://schema.org/ContactPoint" itemProp="contactPoint">
               <Card className="shadow-card border-0">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -44,11 +62,16 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Phone</h3>
-                    <p className="text-muted-foreground">+91 90080 34040</p>
+                    <a
+                      href="tel:+919008034040"
+                      className="text-muted-foreground"
+                      itemProp="telephone"
+                    >
+                      +91 90080 34040
+                    </a>
                   </div>
                 </CardContent>
               </Card>
-              
               <Card className="shadow-card border-0">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -56,11 +79,16 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">info@accountswhiz.com</p>
+                    <a
+                      href="mailto:info@accountswhiz.com"
+                      className="text-muted-foreground"
+                      itemProp="email"
+                    >
+                      info@accountswhiz.com
+                    </a>
                   </div>
                 </CardContent>
               </Card>
-              
               <Card className="shadow-card border-0">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -73,65 +101,92 @@ const ContactSection = () => {
                 </CardContent>
               </Card>
             </div>
-          </div>
-          
+          </aside>
           {/* Right Content - Contact Form */}
-          <div>
+          <section aria-label="Contact Form" className="w-full">
             <Card className="shadow-elegant border-0">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-foreground">
                   Contact Us
                 </CardTitle>
                 <p className="text-muted-foreground">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                  Fill out the form below and we&apos;ll get back to you within 24 hours.
                 </p>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="space-y-6"
+                  itemScope
+                  itemType="https://schema.org/ContactForm"
+                  aria-labelledby="contact-form-title"
+                >
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name *</Label>
                       <Input
                         id="firstName"
+                        aria-invalid={!!errors.firstName}
+                        aria-describedby={errors.firstName ? "firstName-error" : undefined}
                         {...register("firstName", { required: "First name is required" })}
                         className={errors.firstName ? "border-destructive" : ""}
                       />
                       {errors.firstName && (
-                        <p className="text-sm text-destructive">{errors.firstName.message as string}</p>
+                        <p
+                          className="text-sm text-destructive"
+                          id="firstName-error"
+                          role="alert"
+                        >
+                          {errors.firstName.message as string}
+                        </p>
                       )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name *</Label>
                       <Input
                         id="lastName"
+                        aria-invalid={!!errors.lastName}
+                        aria-describedby={errors.lastName ? "lastName-error" : undefined}
                         {...register("lastName", { required: "Last name is required" })}
                         className={errors.lastName ? "border-destructive" : ""}
                       />
                       {errors.lastName && (
-                        <p className="text-sm text-destructive">{errors.lastName.message as string}</p>
+                        <p
+                          className="text-sm text-destructive"
+                          id="lastName-error"
+                          role="alert"
+                        >
+                          {errors.lastName.message as string}
+                        </p>
                       )}
                     </div>
                   </div>
-                  
                   <div className="space-y-2">
                     <Label htmlFor="email">Email *</Label>
                     <Input
                       id="email"
                       type="email"
-                      {...register("email", { 
+                      aria-invalid={!!errors.email}
+                      aria-describedby={errors.email ? "email-error" : undefined}
+                      {...register("email", {
                         required: "Email is required",
                         pattern: {
                           value: /^\S+@\S+$/i,
-                          message: "Invalid email address"
-                        }
+                          message: "Invalid email address",
+                        },
                       })}
                       className={errors.email ? "border-destructive" : ""}
                     />
                     {errors.email && (
-                      <p className="text-sm text-destructive">{errors.email.message as string}</p>
+                      <p
+                        className="text-sm text-destructive"
+                        id="email-error"
+                        role="alert"
+                      >
+                        {errors.email.message as string}
+                      </p>
                     )}
                   </div>
-                  
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone</Label>
                     <Input
@@ -140,7 +195,6 @@ const ContactSection = () => {
                       {...register("phone")}
                     />
                   </div>
-                  
                   <div className="space-y-2">
                     <Label htmlFor="company">Company</Label>
                     <Input
@@ -148,27 +202,33 @@ const ContactSection = () => {
                       {...register("company")}
                     />
                   </div>
-                  
                   <div className="space-y-2">
                     <Label htmlFor="message">Message *</Label>
                     <Textarea
                       id="message"
                       rows={4}
+                      aria-invalid={!!errors.message}
+                      aria-describedby={errors.message ? "message-error" : undefined}
                       {...register("message", { required: "Message is required" })}
                       className={errors.message ? "border-destructive" : ""}
                     />
                     {errors.message && (
-                      <p className="text-sm text-destructive">{errors.message.message as string}</p>
+                      <p
+                        className="text-sm text-destructive"
+                        id="message-error"
+                        role="alert"
+                      >
+                        {errors.message.message as string}
+                      </p>
                     )}
                   </div>
-                  
                   <Button type="submit" size="lg" className="w-full">
                     Send Message
                   </Button>
                 </form>
               </CardContent>
             </Card>
-          </div>
+          </section>
         </div>
       </div>
     </section>
