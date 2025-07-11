@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building2, Calculator, Users2, FileText, Shield, TrendingUp, ChevronDown, ChevronUp, Globe, DollarSign } from "lucide-react";
+import { Building2, Calculator, Users2, FileText, Briefcase, TrendingUp, ChevronDown, ChevronUp, Globe, DollarSign, Building, FileCheck } from "lucide-react";
 
 const services = [
   {
@@ -44,7 +44,7 @@ const services = [
     ]
   },
   {
-    icon: Shield,
+    icon: Briefcase,
     title: "Corporate Secretarial & Governance",
     description: "Maintaining governance frameworks and legal filings",
     features: [
@@ -64,13 +64,33 @@ const services = [
     ]
   },
   {
-    icon: Globe,
-    title: "USA Services",
-    description: "Comprehensive accounting, tax, and business services for US operations",
+    icon: Building,
+    title: "US Business Formation",
+    description: "Complete support for setting up your business entity in the United States",
     features: [
-      "US business formation (LLC, Corporation)",
-      "US tax preparation and compliance",
-      "US bookkeeping and payroll services"
+      "LLC Formation and Corporation Setup",
+      "EIN Registration and State Compliance",
+      "Business structuring and advisory"
+    ]
+  },
+  {
+    icon: FileCheck,
+    title: "US Tax & Compliance",
+    description: "Comprehensive tax services for individuals and businesses operating in the US",
+    features: [
+      "Federal and State Tax Returns",
+      "Tax Planning and Quarterly Payments",
+      "US payroll processing and compliance"
+    ]
+  },
+  {
+    icon: Globe,
+    title: "US Accounting Services",
+    description: "Professional accounting services tailored for US business requirements",
+    features: [
+      "QuickBooks Setup & Management",
+      "Financial Statement Preparation",
+      "Monthly reporting and cash flow management"
     ]
   },
   {
