@@ -10,11 +10,11 @@ const NotchedBox = ({ title, children }: { title: string; children: React.ReactN
       background: "#fff",
       border: "3px solid #163d9e",
       borderRadius: 0,
-      padding: "2.5rem 2.8rem",
+      padding: "1.8rem 2.2rem",
       clipPath:
         "polygon(0 0, calc(100% - 36px) 0, 100% 36px, 100% 100%, 36px 100%, 0 calc(100% - 36px))",
-      marginBottom: "2.5rem",
-      minHeight: 280,
+      marginBottom: "1.8rem",
+      minHeight: 220,
       boxSizing: "border-box",
       maxWidth: "100%",
       width: "100%",
@@ -23,8 +23,8 @@ const NotchedBox = ({ title, children }: { title: string; children: React.ReactN
     <h3
       style={{
         fontWeight: 800,
-        fontSize: "2.3rem",
-        marginBottom: "1.3rem",
+        fontSize: "2rem",
+        marginBottom: "1rem",
         lineHeight: 1.1,
         color: "#141414",
       }}
@@ -136,20 +136,23 @@ const AboutUs = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="py-20 bg-[#17181b] text-white relative overflow-hidden">
+      <section className="py-16 bg-[#17181b] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
             About Us
           </h1>
-          <p className="text-xl text-white/80 mb-4">
-            We are a women-led team of financial experts
+          <p className="text-xl text-white/90 mb-2">
+            Empowered by women leaders, driven by excellence
+          </p>
+          <p className="text-lg text-white/80">
+            Meet our team of certified professionals with decades of cross-border expertise
           </p>
         </div>
       </section>
 
       {/* Our Purpose - Notched Cards Section */}
-      <section className="py-12" style={{ background: "#fafbfc" }}>
+      <section className="py-8" style={{ background: "#fafbfc" }}>
         <div className="container mx-auto px-4">
           <div style={{ maxWidth: 900, margin: "0 auto", paddingLeft: 16, paddingRight: 16 }}>
             <NotchedBox title="Our Vision">
@@ -163,10 +166,10 @@ const AboutUs = () => {
       </section>
 
       {/* Our Expert Team Section - Moved to top and restructured */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               Our Expert Team
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
