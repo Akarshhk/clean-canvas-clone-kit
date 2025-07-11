@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building, Calculator, Users, Receipt, Gavel, TrendingUp, ChevronDown, ChevronUp } from "lucide-react";
+import { Building2, Calculator, Users2, FileText, Shield, TrendingUp, ChevronDown, ChevronUp, Globe, DollarSign } from "lucide-react";
 
 const services = [
   {
-    icon: Building,
+    icon: Building2,
     title: "Entity Setup & Regulatory Structuring",
     description: "End-to-end business setup and registration services in India and the US",
     features: [
@@ -24,7 +24,7 @@ const services = [
     ]
   },
   {
-    icon: Users,
+    icon: Users2,
     title: "Payroll & Employment Compliance",
     description: "Complete payroll processing with jurisdiction-specific compliance",
     features: [
@@ -34,7 +34,7 @@ const services = [
     ]
   },
   {
-    icon: Receipt,
+    icon: FileText,
     title: "Taxation & Filings",
     description: "Domestic and cross-border tax management for founders and companies",
     features: [
@@ -44,7 +44,7 @@ const services = [
     ]
   },
   {
-    icon: Gavel,
+    icon: Shield,
     title: "Corporate Secretarial & Governance",
     description: "Maintaining governance frameworks and legal filings",
     features: [
@@ -61,6 +61,26 @@ const services = [
       "Business model validation and growth scenario planning",
       "Investment readiness and due diligence support",
       "Budgeting, forecasting, and investor reporting"
+    ]
+  },
+  {
+    icon: Globe,
+    title: "USA Services",
+    description: "Comprehensive accounting, tax, and business services for US operations",
+    features: [
+      "US business formation (LLC, Corporation)",
+      "US tax preparation and compliance",
+      "US bookkeeping and payroll services"
+    ]
+  },
+  {
+    icon: DollarSign,
+    title: "CPA Firm Support",
+    description: "Scale your practice with our expert outsourcing services",
+    features: [
+      "Outsourced accounting and bookkeeping",
+      "Tax preparation and review services",
+      "Payroll reconciliations and AR/AP management"
     ]
   }
 ];

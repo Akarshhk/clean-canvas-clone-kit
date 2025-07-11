@@ -354,20 +354,6 @@ const USServices = () => {
         </div>
       </section>
 
-      {/* Ready to expand to US Section */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-6">Ready to Expand to the US?</h3>
-            <p className="text-xl text-muted-foreground mb-8">
-              Let us handle your US compliance while you focus on growing your business.
-            </p>
-            <Button size="lg" className="px-8 py-3">
-              Get Started with US Services
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Cross-Service CTA */}
       <section className="py-12 bg-background">
