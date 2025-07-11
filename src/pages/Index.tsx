@@ -57,7 +57,7 @@ const Index = () => {
                 />
               </div>
               <p className="text-white/80">
-                Strategic financial services for growth-oriented businesses.
+                Technology Driven Accounting & Compliance Services for Startups/SME’s growth.
               </p>
             </div>
             
