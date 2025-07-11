@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Mail, Menu, X } from "lucide-react";
+import { handleContactNavigation } from "../utils/navigation";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -109,11 +110,7 @@ const Navigation = () => {
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
-                  if (pathname === "/") {
-                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                  } else {
-                    window.location.href = "/#contact";
-                  }
+                  handleContactNavigation(pathname);
                 }}
                 itemProp="url"
               >
@@ -151,16 +148,12 @@ const Navigation = () => {
                     </a>
                   ))}
                   <a
-                    href="#contact"
+                    href="/#contact"
                     className="text-foreground hover:text-primary transition-colors py-2"
                     onClick={(e) => {
                       e.preventDefault();
                       closeMobileMenu();
-                      if (pathname === "/") {
-                        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                      } else {
-                        window.location.href = "/#contact";
-                      }
+                      handleContactNavigation(pathname);
                     }}
                     itemProp="url"
                   >
