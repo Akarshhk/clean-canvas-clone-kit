@@ -144,7 +144,6 @@ const HeroSection = () => {
                   { src: "bb254e8b-3518-4cb9-b5da-383872f86efb.png", alt: "Rural Shores" },
                   { src: "ce367f56-6e60-43b8-ac2b-ac4ee842f4c2.png", alt: "Elevation Tax and Accounting" },
                 ]
-                  .flatMap((logo) => [logo, logo]) // repeat for scroll
                   .map((logo, i) => (
                     <img
                       key={i}
