@@ -129,13 +129,13 @@ const HeroSection = () => {
             </div>
             {/* Logos Carousel - schema.org ItemList */}
             <section
-              className="relative overflow-hidden max-w-xs mx-auto"
+              className="relative overflow-hidden"
               aria-label="Client logos"
               itemScope
               itemType="https://schema.org/ItemList"
             >
               <meta itemProp="name" content="Client Logos" />
-              <div className="flex animate-[scroll_15s_linear_infinite] hover:pause items-center justify-center">
+              <div className="flex animate-[scroll_20s_linear_infinite] hover:pause gap-12 items-center">
                 {[
                   { src: "139beeb5-2b81-4a12-8d1a-c9a8132abc04.png", alt: "B2Brain" },
                   { src: "24c70498-81ad-430a-a163-06e60552bc36.png", alt: "HungerBox" },
@@ -144,15 +144,14 @@ const HeroSection = () => {
                   { src: "bb254e8b-3518-4cb9-b5da-383872f86efb.png", alt: "Rural Shores" },
                   { src: "ce367f56-6e60-43b8-ac2b-ac4ee842f4c2.png", alt: "Elevation Tax and Accounting" },
                 ]
-                  .flatMap((logo) => [logo, logo, logo]) // repeat for smooth scroll
+                  .flatMap((logo) => [logo, logo]) // repeat for scroll
                   .map((logo, i) => (
                     <img
                       key={i}
                       src={`/lovable-uploads/${logo.src}`}
                       alt={`${logo.alt} logo`}
-                      className="h-12 w-auto flex-shrink-0 mx-8 hover:scale-110 transition-all duration-300"
+                      className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
                       itemProp="itemListElement"
-                      style={{ minWidth: "120px" }}
                     />
                   ))}
               </div>
