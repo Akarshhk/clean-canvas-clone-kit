@@ -6,7 +6,7 @@ const heroImage = "/lovable-uploads/799ad5f7-5986-4218-9203-8b3246083348.png";
 const HeroSection = () => {
   return (
     <>
-      {/* Semantic Hero Section as Organization */}
+      {/* Hero Section as Organization */}
       <header
         id="home"
         className="relative min-h-screen flex items-center justify-center"
@@ -14,6 +14,10 @@ const HeroSection = () => {
         itemType="https://schema.org/Organization"
         aria-labelledby="hero-heading"
       >
+        <meta itemProp="name" content="AccountsWhiz" />
+        <meta itemProp="url" content="https://accountswhiz.com" />
+        <meta itemProp="logo" content={heroImage} />
+        <meta itemProp="description" content="Strategic financial services for startups, SMEs, and cross-border businesses in India and the US." />
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -45,40 +49,36 @@ const HeroSection = () => {
                 for growth
               </span>
             </h1>
-            {/* Optional Organization Metadata */}
-            <meta itemProp="url" content="https://accountswhiz.com" />
-            <meta itemProp="logo" content={heroImage} />
-            <meta itemProp="description" content="Strategic financial services for startups, SMEs, and cross-border businesses in India and the US." />
+
             {/* Key Stats */}
             <div className="grid grid-cols-2 gap-8 mt-12 max-w-md mx-auto">
-              <div
+              <span
                 className="text-center"
+                itemProp="foundingDate"
                 itemScope
                 itemType="https://schema.org/QuantitativeValue"
               >
                 <meta itemProp="name" content="Years of Experience" />
+                <meta itemProp="value" content="80" />
+                <meta itemProp="unitText" content="years" />
                 <CountUpAnimation start={0} end={80} suffix="+" />
-                <div
-                  className="text-lg text-white/90 mt-2"
-                  itemProp="description"
-                >
+                <span className="text-lg text-white/90 mt-2" itemProp="description">
                   Years Experience
-                </div>
-              </div>
-              <div
+                </span>
+              </span>
+              <span
                 className="text-center"
                 itemScope
                 itemType="https://schema.org/QuantitativeValue"
               >
                 <meta itemProp="name" content="Ongoing Clients" />
+                <meta itemProp="value" content="100" />
+                <meta itemProp="unitText" content="clients" />
                 <CountUpAnimation start={0} end={100} suffix="+" />
-                <div
-                  className="text-lg text-white/90 mt-2"
-                  itemProp="description"
-                >
+                <span className="text-lg text-white/90 mt-2" itemProp="description">
                   Ongoing Clients
-                </div>
-              </div>
+                </span>
+              </span>
             </div>
           </div>
         </div>
@@ -143,16 +143,15 @@ const HeroSection = () => {
                   { src: "7f763ff8-c7d0-4020-85fb-63a170489495.png", alt: "Plum" },
                   { src: "bb254e8b-3518-4cb9-b5da-383872f86efb.png", alt: "Rural Shores" },
                   { src: "ce367f56-6e60-43b8-ac2b-ac4ee842f4c2.png", alt: "Elevation Tax and Accounting" },
-                ]
-                  .map((logo, i) => (
-                    <img
-                      key={i}
-                      src={`/lovable-uploads/${logo.src}`}
-                      alt={`${logo.alt} logo`}
-                      className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
-                      itemProp="itemListElement"
-                    />
-                  ))}
+                ].map((logo, i) => (
+                  <img
+                    key={i}
+                    src={`/lovable-uploads/${logo.src}`}
+                    alt={`${logo.alt} logo`}
+                    className="h-12 w-auto flex-shrink-0 hover:scale-110 transition-all duration-300"
+                    itemProp="itemListElement"
+                  />
+                ))}
               </div>
             </section>
           </div>
