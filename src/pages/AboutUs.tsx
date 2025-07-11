@@ -149,19 +149,9 @@ const AboutUs = () => {
       </section>
 
       {/* Our Purpose - Notched Cards Section */}
-      <section className="py-16" style={{ background: "#fafbfc" }}>
+      <section className="py-12" style={{ background: "#fafbfc" }}>
         <div className="container mx-auto px-4">
           <div style={{ maxWidth: 900, margin: "0 auto", paddingLeft: 16, paddingRight: 16 }}>
-            <h2
-              className="text-4xl font-extrabold text-center mb-12 text-foreground"
-              style={{
-                fontWeight: 800,
-                fontSize: "2.6rem",
-                marginBottom: "3.5rem",
-                color: "#3a4150",
-              }}
-            >
-            </h2>
             <NotchedBox title="Our Vision">
               To be known as a firm that provides diverse financial services exemplifying the highest standards in the industry.
             </NotchedBox>
@@ -173,10 +163,10 @@ const AboutUs = () => {
       </section>
 
       {/* Our Expert Team Section - Moved to top and restructured */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Our Expert Team
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -184,27 +174,27 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="space-y-12 max-w-6xl mx-auto">
+          <div className="space-y-8 max-w-6xl mx-auto">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
+                className="flex flex-col lg:flex-row gap-6 items-center"
               >
                 <div className="lg:w-1/3">
                   <img 
                     src={member.image}
                     alt={member.name}
-                    className="w-64 h-72 rounded-lg object-cover mx-auto shadow-lg"
+                    className="w-56 h-64 rounded-lg object-cover mx-auto shadow-lg"
                   />
                 </div>
                 <div className="lg:w-2/3 text-center lg:text-left">
-                  <h3 className="text-2xl font-bold text-primary mb-2">
+                  <h3 className="text-xl font-bold text-primary mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 font-medium">
+                  <p className="text-sm text-muted-foreground mb-3 font-medium">
                     {member.position}
                   </p>
-                  <p className="text-foreground/80 leading-relaxed mb-4">
+                  <p className="text-foreground/80 leading-relaxed mb-3 text-sm">
                     {member.description}
                   </p>
                   <a
