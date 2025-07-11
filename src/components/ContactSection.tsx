@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const ContactSection = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -34,7 +34,7 @@ const ContactSection = () => {
             <meta itemProp="name" content="AccountsWhiz" />
             <header>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Let&apos;s Start Your
+                Let&apos;s Start Your 
                 <span className="text-primary"> Financial Journey</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
@@ -42,6 +42,7 @@ const ContactSection = () => {
                 to discuss how we can support your business growth.
               </p>
             </header>
+            {/* Optional physical address for LLM/SEO */}
             <address
               className="not-italic mb-8"
               itemProp="address"
@@ -54,7 +55,12 @@ const ContactSection = () => {
               <span itemProp="postalCode">560069</span>
             </address>
             {/* Contact Info Cards */}
-            <div className="space-y-6" itemScope itemType="https://schema.org/ContactPoint" itemProp="contactPoint">
+            <div
+              className="space-y-6"
+              itemScope
+              itemType="https://schema.org/ContactPoint"
+              itemProp="contactPoint"
+            >
               <Card className="shadow-card border-0">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -102,6 +108,7 @@ const ContactSection = () => {
               </Card>
             </div>
           </aside>
+          
           {/* Right Content - Contact Form */}
           <section aria-label="Contact Form" className="w-full">
             <Card className="shadow-elegant border-0">
@@ -126,67 +133,45 @@ const ContactSection = () => {
                       <Label htmlFor="firstName">First Name *</Label>
                       <Input
                         id="firstName"
-                        aria-invalid={!!errors.firstName}
-                        aria-describedby={errors.firstName ? "firstName-error" : undefined}
                         {...register("firstName", { required: "First name is required" })}
                         className={errors.firstName ? "border-destructive" : ""}
                       />
                       {errors.firstName && (
-                        <p
-                          className="text-sm text-destructive"
-                          id="firstName-error"
-                          role="alert"
-                        >
-                          {errors.firstName.message as string}
-                        </p>
+                        <p className="text-sm text-destructive">{errors.firstName.message as string}</p>
                       )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name *</Label>
                       <Input
                         id="lastName"
-                        aria-invalid={!!errors.lastName}
-                        aria-describedby={errors.lastName ? "lastName-error" : undefined}
                         {...register("lastName", { required: "Last name is required" })}
                         className={errors.lastName ? "border-destructive" : ""}
                       />
                       {errors.lastName && (
-                        <p
-                          className="text-sm text-destructive"
-                          id="lastName-error"
-                          role="alert"
-                        >
-                          {errors.lastName.message as string}
-                        </p>
+                        <p className="text-sm text-destructive">{errors.lastName.message as string}</p>
                       )}
                     </div>
                   </div>
+                  
                   <div className="space-y-2">
                     <Label htmlFor="email">Email *</Label>
                     <Input
                       id="email"
                       type="email"
-                      aria-invalid={!!errors.email}
-                      aria-describedby={errors.email ? "email-error" : undefined}
-                      {...register("email", {
+                      {...register("email", { 
                         required: "Email is required",
                         pattern: {
                           value: /^\S+@\S+$/i,
-                          message: "Invalid email address",
-                        },
+                          message: "Invalid email address"
+                        }
                       })}
                       className={errors.email ? "border-destructive" : ""}
                     />
                     {errors.email && (
-                      <p
-                        className="text-sm text-destructive"
-                        id="email-error"
-                        role="alert"
-                      >
-                        {errors.email.message as string}
-                      </p>
+                      <p className="text-sm text-destructive">{errors.email.message as string}</p>
                     )}
                   </div>
+                  
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone</Label>
                     <Input
@@ -195,6 +180,7 @@ const ContactSection = () => {
                       {...register("phone")}
                     />
                   </div>
+                  
                   <div className="space-y-2">
                     <Label htmlFor="company">Company</Label>
                     <Input
@@ -202,26 +188,20 @@ const ContactSection = () => {
                       {...register("company")}
                     />
                   </div>
+                  
                   <div className="space-y-2">
                     <Label htmlFor="message">Message *</Label>
                     <Textarea
                       id="message"
                       rows={4}
-                      aria-invalid={!!errors.message}
-                      aria-describedby={errors.message ? "message-error" : undefined}
                       {...register("message", { required: "Message is required" })}
                       className={errors.message ? "border-destructive" : ""}
                     />
                     {errors.message && (
-                      <p
-                        className="text-sm text-destructive"
-                        id="message-error"
-                        role="alert"
-                      >
-                        {errors.message.message as string}
-                      </p>
+                      <p className="text-sm text-destructive">{errors.message.message as string}</p>
                     )}
                   </div>
+                  
                   <Button type="submit" size="lg" className="w-full">
                     Send Message
                   </Button>

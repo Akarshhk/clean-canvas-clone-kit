@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Building, Calculator, Users, FileText, Shield, TrendingUp, ChevronDown, ChevronUp } from "lucide-react";
 
 const services = [
@@ -73,14 +73,19 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gradient-subtle">
+    <section
+      id="services"
+      className="py-20 bg-gradient-subtle"
+      itemScope
+      itemType="https://schema.org/OfferCatalog"
+    >
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6" itemProp="name">
             Core Services
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground" itemProp="description">
             We work as an integrated finance partner across the following areas to provide 
             operational clarity and regulatory confidence businesses need at every stage.
           </p>
@@ -89,23 +94,30 @@ const ServicesSection = () => {
         {/* Modern Services Cards */}
         <div className="max-w-4xl mx-auto space-y-4">
           {services.map((service, index) => (
-            <div 
-              key={index} 
+            <section
+              key={index}
               className="bg-white rounded-2xl shadow-lg border border-border/50 overflow-hidden transition-all duration-300 hover:shadow-elegant"
+              itemScope
+              itemType="https://schema.org/Service"
+              itemProp="itemListElement"
             >
-              <div 
+              <div
                 className="flex items-center justify-between p-6 cursor-pointer hover:bg-muted/30 transition-colors"
                 onClick={() => toggleService(index)}
+                tabIndex={0}
+                role="button"
+                aria-expanded={expandedService === index}
+                aria-controls={`service-panel-${index}`}
               >
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
                     <service.icon className="w-7 h-7 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground">
+                    <h3 className="text-xl font-semibold text-foreground" itemProp="name">
                       {service.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mt-1">
+                    <p className="text-muted-foreground text-sm mt-1" itemProp="description">
                       {service.description}
                     </p>
                   </div>
@@ -118,27 +130,34 @@ const ServicesSection = () => {
                   )}
                 </div>
               </div>
-              
               {/* Expanded Content */}
-              <div className={`transition-all duration-300 ease-in-out ${
-                expandedService === index 
-                  ? 'max-h-96 opacity-100' 
-                  : 'max-h-0 opacity-0'
-              } overflow-hidden`}>
+              <div
+                className={`transition-all duration-300 ease-in-out ${
+                  expandedService === index 
+                    ? 'max-h-96 opacity-100' 
+                    : 'max-h-0 opacity-0'
+                } overflow-hidden`}
+                id={`service-panel-${index}`}
+                aria-hidden={expandedService !== index}
+              >
                 <div className="px-6 pb-6 pt-2">
-                  <div className="pl-18">
-                    <ul className="space-y-3">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-muted-foreground">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-sm leading-relaxed">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="space-y-3 pl-1.5" itemProp="hasOfferCatalog" itemScope itemType="https://schema.org/OfferCatalog">
+                    {service.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-muted-foreground"
+                        itemProp="itemListElement"
+                        itemScope
+                        itemType="https://schema.org/Offer"
+                      >
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-sm leading-relaxed" itemProp="name">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            </div>
+            </section>
           ))}
         </div>
         
@@ -149,12 +168,28 @@ const ServicesSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="bg-white rounded-lg p-6 shadow-card">
-              <div className="text-3xl font-bold text-primary mb-1">100+</div>
-              <div className="text-sm text-muted-foreground">Ongoing Clients</div>
+              <div
+                className="text-3xl font-bold text-primary mb-1"
+                itemScope
+                itemType="https://schema.org/QuantitativeValue"
+              >
+                <span itemProp="value">100</span>+
+                <div className="text-sm text-muted-foreground" itemProp="description">
+                  Ongoing Clients
+                </div>
+              </div>
             </div>
             <div className="bg-white rounded-lg p-6 shadow-card">
-              <div className="text-3xl font-bold text-primary mb-1">80+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
+              <div
+                className="text-3xl font-bold text-primary mb-1"
+                itemScope
+                itemType="https://schema.org/QuantitativeValue"
+              >
+                <span itemProp="value">80</span>+
+                <div className="text-sm text-muted-foreground" itemProp="description">
+                  Years Experience
+                </div>
+              </div>
             </div>
           </div>
         </div>
