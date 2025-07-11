@@ -66,7 +66,10 @@ const TestimonialsSection = () => {
                       <img
                         src={testimonial.logo}
                         alt={testimonial.logoAlt + " logo"}
-                        className="h-12 md:h-16 max-w-[140px] object-contain mx-auto bg-white p-2 rounded-lg shadow-md"
+                        className="h-12 md:h-16 max-w-[140px] object-contain mx-auto bg-white p-3 rounded-lg shadow-sm"
+                        style={{
+                          filter: "none"
+                        }}
                         loading="lazy"
                       />
                     </div>
