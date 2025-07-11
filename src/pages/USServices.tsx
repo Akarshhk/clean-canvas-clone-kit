@@ -43,10 +43,10 @@ const USServices = () => {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 bg-card/30">
+      <section className="py-12 bg-card/30">
         <div className="container mx-auto px-4">
           <div className="bg-card rounded-2xl p-8">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Our US Services?</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">Why Choose Our US Services?</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Expert US Team</h3>
@@ -66,9 +66,9 @@ const USServices = () => {
       </section>
 
       {/* US SMEs Section */}
-      <section id="us-smes" className="py-16 bg-background">
+      <section id="us-smes" className="py-12 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">US SMEs</h2>
+          <h2 className="text-4xl font-bold text-center mb-8">US SMEs</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
@@ -183,28 +183,18 @@ const USServices = () => {
             </Card>
           </div>
 
-          {/* CTA Section for SMEs */}
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-6">Ready to Expand to the US?</h3>
-            <p className="text-xl text-muted-foreground mb-8">
-              Let us handle your US compliance while you focus on growing your business.
-            </p>
-            <Button size="lg" className="px-8 py-3">
-              Get Started with US Services
-            </Button>
-          </div>
         </div>
       </section>
 
       {/* US CPA Firms Section */}
-      <section id="us-cpa-firms" className="py-16 bg-muted/30">
+      <section id="us-cpa-firms" className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-6">US CPA Firms</h2>
-          <p className="text-xl text-center text-muted-foreground mb-12 max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4">US CPA Firms</h2>
+          <p className="text-xl text-center text-muted-foreground mb-8 max-w-4xl mx-auto">
             Accelerate your practise as we deliver Accuracy, Efficiency, and Insight—Across Borders
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-primary">Accounting Outsourcing Services</CardTitle>
@@ -364,8 +354,23 @@ const USServices = () => {
         </div>
       </section>
 
+      {/* Ready to expand to US Section */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold mb-6">Ready to Expand to the US?</h3>
+            <p className="text-xl text-muted-foreground mb-8">
+              Let us handle your US compliance while you focus on growing your business.
+            </p>
+            <Button size="lg" className="px-8 py-3">
+              Get Started with US Services
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Cross-Service CTA */}
-      <section className="py-16 bg-background">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="bg-primary/5 rounded-2xl p-8 text-center border border-primary/10">
             <h3 className="text-2xl font-bold text-foreground mb-4">
