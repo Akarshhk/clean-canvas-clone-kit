@@ -109,9 +109,10 @@ const Navigation = () => {
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={(e) => {
                   e.preventDefault();
-                  const contactElement = document.getElementById("contact");
-                  if (contactElement) {
-                    contactElement.scrollIntoView({ behavior: "smooth" });
+                  if (pathname === "/") {
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  } else {
+                    window.location.href = "/#contact";
                   }
                 }}
                 itemProp="url"
@@ -155,9 +156,10 @@ const Navigation = () => {
                     onClick={(e) => {
                       e.preventDefault();
                       closeMobileMenu();
-                      const contactElement = document.getElementById("contact");
-                      if (contactElement) {
-                        contactElement.scrollIntoView({ behavior: "smooth" });
+                      if (pathname === "/") {
+                        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        window.location.href = "/#contact";
                       }
                     }}
                     itemProp="url"

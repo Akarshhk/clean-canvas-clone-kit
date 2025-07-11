@@ -18,13 +18,33 @@ const USServices = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Comprehensive accounting, tax, and business services for companies operating in the United States. Navigate US regulations with confidence.
             </p>
+            
+            {/* Service Category Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <Button
+                size="lg"
+                className="px-8 py-3"
+                onClick={() => document.getElementById("us-smes")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                US SMEs
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 py-3 border-primary text-primary hover:bg-primary hover:text-white"
+                onClick={() => document.getElementById("us-cpa-firms")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                US CPA Firms
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-background">
+      {/* US SMEs Section */}
+      <section id="us-smes" className="py-20 bg-background">
         <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">US SMEs</h2>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
@@ -188,6 +208,116 @@ const USServices = () => {
             </p>
             <Button size="lg" className="px-8 py-3">
               Get Started with US Services
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* US CPA Firms Section */}
+      <section id="us-cpa-firms" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-6">US CPA Firms</h2>
+          <p className="text-xl text-center text-muted-foreground mb-12 max-w-4xl mx-auto">
+            Accelerate your practise as we deliver Accuracy, Efficiency, and Insight—Across Borders
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-border hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-primary">Outsourced Tax Preparation</CardTitle>
+                <CardDescription>
+                  Scale your firm with our expert tax preparation services
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Individual Tax Returns (1040)</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Business Tax Returns (1120, 1120S, 1065)</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Multi-State Tax Returns</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Tax Review & Quality Control</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-primary">Bookkeeping Support</CardTitle>
+                <CardDescription>
+                  Professional bookkeeping services to support your clients
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Monthly Bookkeeping</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Bank Reconciliations</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Financial Statement Preparation</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>QuickBooks Clean-up</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-primary">Audit & Review Support</CardTitle>
+                <CardDescription>
+                  Comprehensive audit assistance and review services
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Audit Workpaper Preparation</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Review Engagements</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Internal Control Testing</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span>Compliance Testing</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* CTA for CPA Firms */}
+          <div className="text-center mt-16">
+            <h3 className="text-3xl font-bold mb-6">Ready to Scale Your Practice?</h3>
+            <p className="text-xl text-muted-foreground mb-8">
+              Partner with us to expand your capacity and serve more clients efficiently.
+            </p>
+            <Button size="lg" className="px-8 py-3">
+              Partner with Us
             </Button>
           </div>
         </div>
