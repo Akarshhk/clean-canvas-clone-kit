@@ -142,7 +142,7 @@ const AboutUs = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             About Us
           </h1>
-          <p className="text-xl text-primary-light font-semibold mb-2">
+          <p className="text-xl text-accent font-semibold mb-2">
             Empowered by women leaders, driven by excellence
           </p>
           <p className="text-lg text-white/80">
