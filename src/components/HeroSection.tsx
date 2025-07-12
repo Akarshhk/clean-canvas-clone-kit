@@ -111,7 +111,7 @@ const HeroSection = () => {
                   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Start Your India Journey
+                Explore our India Services
               </Button>
               <Button
                 size="lg"
@@ -121,7 +121,7 @@ const HeroSection = () => {
                   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Start Your US Journey
+                Explore our US Services
               </Button>
             </div>
             {/* Trust Message */}
