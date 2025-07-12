@@ -34,12 +34,12 @@ const ContactSection = () => {
             <meta itemProp="name" content="AccountsWhiz" />
             <header>
               <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Let&apos;s Start Your 
-                <span className="text-primary"> Financial Journey</span>
+                Partner With Us to
+                <span className="text-primary"> Simplify Finance & Compliance</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
-                Ready to streamline your financial operations? Get in touch with our expert team 
-                to discuss how we can support your business growth.
+                Whether you're launching, scaling, or streamlining—our expert team helps manage your accounting, 
+                tax, payroll, and regulatory needs with precision and tech-driven efficiency.
               </p>
             </header>
             {/* Optional physical address for LLM/SEO */}
