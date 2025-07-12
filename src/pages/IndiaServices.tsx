@@ -266,7 +266,7 @@ const IndiaServices = () => {
               className="px-8 py-3"
               onClick={() => window.location.href = '/#contact'}
             >
-              Start Your India Journey
+              Explore
             </Button>
           </div>
         </div>
