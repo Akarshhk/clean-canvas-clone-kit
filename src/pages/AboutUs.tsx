@@ -381,7 +381,7 @@ const AboutUs = () => {
                 Between all the members of our team, we have over 80 years of experience backing our expertise. However, we continually strive to improve our services to maintain our status as the best in the business.
               </p>
               <p className="text-lg text-foreground">
-                We believe that for growth to be sustainable, it must be socially inclusive. This is one of the reasons why we also work with Non-Profit organizations. Through our influence and approach to various situations, we are committed to helping your organization put the best financial practices in place.
+                
               </p>
             </CardContent>
           </Card>
