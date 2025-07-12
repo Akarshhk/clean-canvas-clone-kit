@@ -142,7 +142,7 @@ const AboutUs = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             About Us
           </h1>
-          <p className="text-xl text-white/90 mb-2">
+          <p className="text-xl text-primary-light font-semibold mb-2">
             Empowered by women leaders, driven by excellence
           </p>
           <p className="text-lg text-white/80">
@@ -172,7 +172,7 @@ const AboutUs = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               Our Expert Team
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-primary font-medium max-w-2xl mx-auto">
               Meet our experienced women leaders who bring decades of expertise in accounting, compliance, and financial advisory services.
             </p>
           </div>
