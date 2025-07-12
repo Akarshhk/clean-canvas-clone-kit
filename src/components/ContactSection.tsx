@@ -41,6 +41,9 @@ const ContactSection = () => {
                 Whether you're launching, scaling, or streamlining—our expert team helps manage your accounting, 
                 tax, payroll, and regulatory needs with precision and tech-driven efficiency.
               </p>
+              <p className="text-xl text-muted-foreground mb-8">
+                Get in touch with our expert team to discuss how we can support your business growth.
+              </p>
             </header>
             {/* Optional physical address for LLM/SEO */}
             <address
