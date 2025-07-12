@@ -37,17 +37,18 @@ const HeroSection = () => {
             >
               <span className="text-5xl md:text-7xl">AccountsWhiz</span>
               <br />
-              <span className="text-2xl md:text-4xl text-muted-foreground mt-2 block">
+              <span className="text-2xl md:text-4xl mt-2 block" style={{ color: "#b9b8c5" }}>
                 Technology Driven Accounting &
               </span>
               <br />
-              <span className="text-2xl md:text-4xl text-muted-foreground">
+              <span className="text-2xl md:text-4xl" style={{ color: "#b9b8c5" }}>
                 Compliance Services for
               </span>
               <br />
-              <span className="text-2xl md:text-4xl text-muted-foreground">
+              <span className="text-2xl md:text-4xl" style={{ color: "#b9b8c5" }}>
                 Startups/SME's growth
               </span>
+
             </h1>
 
             {/* Key Stats */}
