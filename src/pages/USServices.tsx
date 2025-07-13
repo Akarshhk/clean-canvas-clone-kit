@@ -183,6 +183,12 @@ const USServices = () => {
             </Card>
           </div>
 
+          {/* Technology-driven description */}
+          <div className="bg-primary/5 rounded-2xl p-8 text-center border border-primary/10">
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+              Technology-driven accounting, payroll, and compliance services tailored for US-based Startups and SMEs — empowering efficient financial management and scalable growth.
+            </p>
+          </div>
         </div>
       </section>
 

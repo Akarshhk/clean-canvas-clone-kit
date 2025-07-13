@@ -107,9 +107,7 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-white px-8 py-3"
-                onClick={() =>
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => window.location.href = '/india-services'}
               >
                 Explore our India Services
               </Button>
@@ -117,9 +115,7 @@ const HeroSection = () => {
                 size="lg"
                 variant="outline"
                 className="px-8 py-3"
-                onClick={() =>
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => window.location.href = '/us-services'}
               >
                 Explore our US Services
               </Button>
