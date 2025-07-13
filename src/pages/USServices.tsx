@@ -68,7 +68,12 @@ const USServices = () => {
       {/* US SMEs Section */}
       <section id="us-smes" className="py-12 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-8">US SMEs</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">US SMEs</h2>
+          <div className="bg-primary/5 rounded-2xl p-6 text-center border border-primary/10 mb-8">
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+              Technology-driven accounting, payroll, and compliance services tailored for US-based Startups and SMEs — empowering efficient financial management and scalable growth.
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
@@ -181,13 +186,6 @@ const USServices = () => {
                 </ul>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Technology-driven description */}
-          <div className="bg-primary/5 rounded-2xl p-8 text-center border border-primary/10">
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-              Technology-driven accounting, payroll, and compliance services tailored for US-based Startups and SMEs — empowering efficient financial management and scalable growth.
-            </p>
           </div>
         </div>
       </section>
