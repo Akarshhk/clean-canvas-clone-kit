@@ -8,10 +8,13 @@ import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
+// --- ContactSection: LLMO/SEO/schema optimized ---
+
 const ContactSection = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const { toast } = useToast();
 
+  // 1. Submission logic is unchanged (Supabase write + feedback toast)
   const onSubmit = async (data: any) => {
     try {
       const { error } = await supabase
@@ -27,7 +30,6 @@ const ContactSection = () => {
         });
 
       if (error) {
-        console.error('Supabase error:', error);
         toast({
           title: "Error",
           description: "There was an issue sending your message. Please try again.",
@@ -42,7 +44,6 @@ const ContactSection = () => {
       });
       reset();
     } catch (error) {
-      console.error('Submission error:', error);
       toast({
         title: "Error",
         description: "There was an issue sending your message. Please try again.",
@@ -52,6 +53,7 @@ const ContactSection = () => {
   };
 
   return (
+    // -- 2. Outer section: ContactPage schema --
     <section
       id="contact"
       className="py-20 bg-background"
@@ -60,15 +62,17 @@ const ContactSection = () => {
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left Content */}
-          <aside itemScope itemType="https://schema.org/Organization">
+          {/* -- 3. Left: Org info, address, contacts, schema.org markup -- */}
+          <aside itemScope itemType="https://schema.org/Organization" className="w-full">
             <meta itemProp="name" content="AccountsWhiz" />
             <header>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              {/* Use h2 for clarity (SEO/LLMO) */}
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6" itemProp="slogan">
                 Partner With Us to
                 <span className="text-primary"> Simplify Finance & Compliance</span>
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              {/* Two descriptive paragraphs, clear for LLM */}
+              <p className="text-xl text-muted-foreground mb-8" itemProp="description">
                 Whether you're launching, scaling, or streamlining—our expert team helps manage your accounting, 
                 tax, payroll, and regulatory needs with precision and tech-driven efficiency.
               </p>
@@ -76,7 +80,7 @@ const ContactSection = () => {
                 Get in touch with our expert team to discuss how we can support your business growth.
               </p>
             </header>
-            {/* Optional physical address for LLM/SEO */}
+            {/* Address with PostalAddress schema (SEO/LLMO) */}
             <address
               className="not-italic mb-8"
               itemProp="address"
@@ -88,13 +92,14 @@ const ContactSection = () => {
               <span itemProp="addressRegion">Bangalore</span> –{" "}
               <span itemProp="postalCode">560069</span>
             </address>
-            {/* Contact Info Cards */}
+            {/* ContactPoint cards: phone/email/hours -- schema.org ContactPoint */}
             <div
               className="space-y-6"
               itemScope
               itemType="https://schema.org/ContactPoint"
               itemProp="contactPoint"
             >
+              {/* Phone */}
               <Card className="shadow-card border-0">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -112,6 +117,7 @@ const ContactSection = () => {
                   </div>
                 </CardContent>
               </Card>
+              {/* Email */}
               <Card className="shadow-card border-0">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -129,6 +135,7 @@ const ContactSection = () => {
                   </div>
                 </CardContent>
               </Card>
+              {/* Business Hours */}
               <Card className="shadow-card border-0">
                 <CardContent className="flex items-center gap-4 p-6">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -136,30 +143,35 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">Business Hours</h3>
-                    <p className="text-muted-foreground">Mon - Fri: 9:00 AM - 6:00 PM IST</p>
+                    <time className="text-muted-foreground" itemProp="hoursAvailable">
+                      Mon - Fri: 9:00 AM - 6:00 PM IST
+                    </time>
                   </div>
                 </CardContent>
               </Card>
             </div>
           </aside>
           
-          {/* Right Content - Contact Form */}
-          <section aria-label="Contact Form" className="w-full">
+          {/* -- 4. Right: Contact form, ContactForm schema -- */}
+          <section
+            aria-label="Contact Form"
+            className="w-full"
+            itemScope
+            itemType="https://schema.org/ContactForm"
+          >
             <Card className="shadow-elegant border-0">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-foreground">
+                <CardTitle className="text-2xl font-bold text-foreground" id="contact-form-title">
                   Contact Us
                 </CardTitle>
                 <p className="text-muted-foreground">
-                  Fill out the form below and we&apos;ll get back to you within 24 hours.
+                  Fill out the form below and we'll get back to you within 24 hours.
                 </p>
               </CardHeader>
               <CardContent>
                 <form
                   onSubmit={handleSubmit(onSubmit)}
                   className="space-y-6"
-                  itemScope
-                  itemType="https://schema.org/ContactForm"
                   aria-labelledby="contact-form-title"
                 >
                   <div className="grid md:grid-cols-2 gap-4">
@@ -169,6 +181,8 @@ const ContactSection = () => {
                         id="firstName"
                         {...register("firstName", { required: "First name is required" })}
                         className={errors.firstName ? "border-destructive" : ""}
+                        autoComplete="given-name"
+                        itemProp="givenName"
                       />
                       {errors.firstName && (
                         <p className="text-sm text-destructive">{errors.firstName.message as string}</p>
@@ -180,6 +194,8 @@ const ContactSection = () => {
                         id="lastName"
                         {...register("lastName", { required: "Last name is required" })}
                         className={errors.lastName ? "border-destructive" : ""}
+                        autoComplete="family-name"
+                        itemProp="familyName"
                       />
                       {errors.lastName && (
                         <p className="text-sm text-destructive">{errors.lastName.message as string}</p>
@@ -200,6 +216,8 @@ const ContactSection = () => {
                         }
                       })}
                       className={errors.email ? "border-destructive" : ""}
+                      autoComplete="email"
+                      itemProp="email"
                     />
                     {errors.email && (
                       <p className="text-sm text-destructive">{errors.email.message as string}</p>
@@ -212,6 +230,8 @@ const ContactSection = () => {
                       id="phone"
                       type="tel"
                       {...register("phone")}
+                      autoComplete="tel"
+                      itemProp="telephone"
                     />
                   </div>
                   
@@ -220,6 +240,7 @@ const ContactSection = () => {
                     <Input
                       id="company"
                       {...register("company")}
+                      itemProp="organization"
                     />
                   </div>
                   
@@ -230,6 +251,7 @@ const ContactSection = () => {
                       rows={4}
                       {...register("message", { required: "Message is required" })}
                       className={errors.message ? "border-destructive" : ""}
+                      itemProp="description"
                     />
                     {errors.message && (
                       <p className="text-sm text-destructive">{errors.message.message as string}</p>
