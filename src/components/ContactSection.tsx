@@ -60,7 +60,6 @@ const ContactSection = () => {
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left Content */}
           <aside itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="AccountsWhiz" />
             <header>
@@ -76,7 +75,6 @@ const ContactSection = () => {
                 Get in touch with our expert team to discuss how we can support your business growth.
               </p>
             </header>
-            {/* Optional physical address for LLM/SEO */}
             <address
               className="not-italic mb-8"
               itemProp="address"
@@ -88,7 +86,6 @@ const ContactSection = () => {
               <span itemProp="addressRegion">Bangalore</span> –{" "}
               <span itemProp="postalCode">560069</span>
             </address>
-            {/* Contact Info Cards */}
             <div
               className="space-y-6"
               itemScope
