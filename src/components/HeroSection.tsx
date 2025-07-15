@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import CountUpAnimation from "./CountUpAnimation";
 
-const heroImage = "/lovable-uploads/799ad5f7-5986-4218-9203-8b3246083348.png";
+const heroImage = "/lovable-uploads/70a6e374-28b7-4460-b8e8-f9579c0e17e4.png";
 
 const HeroSection = () => {
   return (
