@@ -107,7 +107,25 @@ const servicesByGeo = {
       ]
     }
   ],
-  other: []
+  other: [
+    {
+      icon: Calculator,
+      title: "Accounting Services",
+      description: "Customized bookkeeping and reporting solutions aligned with local business norms and compliance frameworks",
+      features: [
+        "Deploy and maintain region-specific tools like Xero, Zoho, or local equivalents for bookkeeping and reporting",
+        "Generate country-specific financials that meet statutory requirements and are investor-friendly"
+      ]
+    },
+    {
+      icon: TrendingUp,
+      title: "MIS & Operational Reporting",
+      description: "Tailored dashboards and periodic management reports to track KPIs, expenses, revenue trends, and other specific metrics",
+      features: [
+        "Tailored dashboards and periodic management reports to track KPIs, expenses, revenue trends, and other specific metrics"
+      ]
+    }
+  ]
 };
 
 const ServicesSection = () => {
@@ -225,7 +243,7 @@ const ServicesSection = () => {
         <div className="max-w-4xl mx-auto">
           {renderServiceSection("India", servicesByGeo.india, "india")}
           {renderServiceSection("US", servicesByGeo.us, "us")}
-          {renderServiceSection("Other Geos", servicesByGeo.other, "other")}
+          {renderServiceSection("Other Geographies", servicesByGeo.other, "other")}
         </div>
         
         {/* Bottom CTA */}
