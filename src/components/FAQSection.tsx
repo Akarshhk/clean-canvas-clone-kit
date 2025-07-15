@@ -36,7 +36,7 @@ const FAQSection = () => {
       question: "What is your typical engagement model?",
       answer: 
         "We offer flexible engagement models based on your business needs - from project-based work to ongoing monthly retainers. We work closely with you to determine the best approach for your specific requirements."
-    }
+    },
     {
       question: "Do you serve clients in regions beyond India and the US?",
       answer: 
