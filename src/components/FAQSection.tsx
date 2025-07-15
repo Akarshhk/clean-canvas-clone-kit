@@ -37,6 +37,11 @@ const FAQSection = () => {
       answer: 
         "We offer flexible engagement models based on your business needs - from project-based work to ongoing monthly retainers. We work closely with you to determine the best approach for your specific requirements."
     }
+    {
+      question: "Do you serve clients in regions beyond India and the US?",
+      answer: 
+        "Yes, under our “Other Geographies” vertical, we currently manage end-to-end accounting, MIS reporting and dashboards for clients based in Singapore and Dubai."
+    }
   ];
 
   return (
