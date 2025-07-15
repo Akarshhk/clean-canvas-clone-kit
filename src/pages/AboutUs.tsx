@@ -101,30 +101,30 @@ const AboutUs = () => {
   const teamMembers = [
     {
       name: "RADHA KOLATHUR CANTHADAI",
-      position: "DIRECTOR, M.COM, FCA, CPA (Inactive), CISA (USA) AND CIA (USA)",
+      position: "DIRECTOR | M.Com, FCA, CPA (Inactive), CISA (USA), CIA (USA)",
       image: "/lovable-uploads/247e2848-8ebb-4360-8ddc-59d136ea8ca3.png",
-      description: "A seasoned risk management and compliance champion with more than 12 years of experience in leading global audit and software compliance teams in HP. Prior to HP, she worked in Deloitte Haskins & Sells in Risk Advisory Services. She is also well versed with the accounting and financial advisory needs of start-ups. Given her exposure in multiple geographies, Radha can lead, engage and work with teams from diverse backgrounds.",
+      description: "Radha is a seasoned risk and compliance professional with experience leading global audit and software compliance teams at HP. She began her career at Deloitte Haskins & Sells in the Risk Advisory practice, where she developed deep expertise in internal controls and regulatory frameworks. At Accountswhiz, Radha holds a leadership role in driving service delivery across accounting, compliance, and financial advisory. Having worked with numerous early-stage startups, she brings practical insights tailored to their unique needs—particularly those looking to expand their global reach. With cross-border exposure, she is adept at leading and collaborating with multicultural, cross-functional teams.",
       linkedin: "https://linkedin.com/in/radha-kolathur"
     },
     {
       name: "GEETHA SURESH",
-      position: "DIRECTOR B COM, CMA, CS, CPA (Inactive), (USA)",
+      position: " DIRECTOR | B.Com, CMA, CS, CPA (Inactive, USA)",
       image: "/lovable-uploads/1850e040-d06f-4b25-aea6-eb82cf822d58.png",
-      description: "Geetha specializes in Cost Accountancy and is a member of the California Board of Accountancy(CPA) and CS. Her theoretical knowledge is backed by over 26 years of practical work experience with multinational corporations as well as start-ups., Including heading the Bangalore operations of Proactive Solutech , a dominant player in outsourcing field. A dynamic personality paired with an optimistic outlook makes Geetha exude positivity wherever she goes. She is known by her team to be a good team player and someone who is always ready to help in any way she can.",
+      description: "Geetha is a qualified Cost and Management Accountant, Company Secretary, and US CPA (Inactive) registered with the California Board of Accountancy. She brings over 26 years of diverse experience across multinational corporations and startups, with deep expertise in cost management, regulatory compliance, and strategic finance. She previously led the Bangalore operations of Proactive Solutech, a leading player in the outsourcing space. At Accountswhiz, Geetha heads both the payroll and accounting functions, overseeing end-to-end service delivery with a focus on accuracy, compliance, and client-specific process efficiency. Her strong operational command and proactive leadership are integral to maintaining the firm’s high standards of execution and reliability.",
       linkedin: "https://linkedin.com/in/geetha-suresh"
     },
     {
       name: "JAYANTHI SRINIVASAN",
-      position: "DIRECTOR, B.COM, CS",
+      position: "DIRECTOR | B.Com, CS",
       image: "/lovable-uploads/20c494bf-75b9-459f-825a-833c11098350.png",
-      description: "Jayanthi Srinivasan is an accomplished Company Secretary and a generalist by practice. She has over 25 years of experience working with big and small brands. .Her stint also involved heading secretarial practice & marketing in Proactive Solutech Operations in Bangalore. Over the years she has become known as a specialist on Corporate Secretarial Matters. Having worked with a number of emerging start-ups, she understands the pulse of the budding directors and entrepreneurs and manages investor relations.",
+      description: "Jayanthi Srinivasan is an accomplished Company Secretary with over 25 years of experience working across both established brands and emerging businesses. Her career spans a broad spectrum of responsibilities, including a leadership role in secretarial practice and marketing at Proactive Solutech’s Bangalore operations. At Accountswhiz, she leads the corporate secretarial function, bringing deep expertise in compliance, governance, and statutory frameworks. She works closely with first-time founders and growing enterprises, offering hands-on support through incorporation and ongoing regulatory compliance, and helps them navigate multiple rounds of funding and investor due diligence with confidence.",
       linkedin: "https://linkedin.com/in/jayanthi-srinivasan"
     },
     {
-      name: "SUDHA K C",
-      position: "MANAGING PARTNER – S R P S & ASSOCIATES (Chennai) M.COM, FCA, CISA(USA) and CIA(USA)",
+      name: "Sudha K C",
+      position: "DIRECTOR | M.Com, FCA, CISA (USA), CIA (USA)",
       image: "/lovable-uploads/b963138e-8796-4756-90df-c0a928fcf2fb.png",
-      description: "An experienced Audit & Finance Professional with stints in US based IT giants – DXC Technology & iGate Global Solutions (part of Capgemini.) Sudha was a key contributor in Corporate Finance with primary focus on revenue recognition, revenue assurance and FP&A. As a risk management professional, she handled diverse areas in Corporate Internal Audit .Currently she heads our associate firm specializing in Corporate Compliances and Taxation.",
+      description: "Sudha is an accomplished finance and audit professional with a strong background in corporate finance, internal audit, and risk management. She previously worked with DXC Technology, where she was involved in revenue assurance and financial planning & analysis (FP&A). As part of the corporate internal audit team, she led a wide range of assignments, including Sarbanes-Oxley (SOX) compliance audits and operational risk reviews. At Accountswhiz, Sudha plays a strategic leadership role in driving the firm’s compliance and analytics practice. Her expertise spans corporate compliances that help businesses stay aligned with evolving regulatory requirements, and data analytics that empower management with timely, actionable insights for strategic decision-making.",
       linkedin: "https://linkedin.com/in/sudha-kc"
     }
   ];
