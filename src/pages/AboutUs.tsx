@@ -139,7 +139,7 @@ const AboutUs = () => {
 
       {/* --- HERO SECTION --- */}
       <section
-        className="py-16 bg-[#17181b] text-white relative overflow-hidden"
+        className="py-16 bg-[#163d9e] text-white relative overflow-hidden"
         itemProp="mainEntity"
         itemScope
         itemType="https://schema.org/Organization"
