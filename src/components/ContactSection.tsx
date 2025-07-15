@@ -63,7 +63,7 @@ const ContactSection = () => {
           <aside itemScope itemType="https://schema.org/Organization">
             <meta itemProp="name" content="AccountsWhiz" />
             <header>
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Partner With Us to
                 <span className="text-primary"> Simplify Finance & Compliance</span>
               </h2>
