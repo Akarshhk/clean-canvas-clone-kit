@@ -241,9 +241,9 @@ const ServicesSection = () => {
         
         {/* Services by Geography */}
         <div className="max-w-4xl mx-auto">
-          {renderServiceSection("India", servicesByGeo.india, "india")}
-          {renderServiceSection("US", servicesByGeo.us, "us")}
-          {renderServiceSection("Other Geographies", servicesByGeo.other, "other")}
+          {renderServiceSection("1) India", servicesByGeo.india, "india")}
+          {renderServiceSection("2) US", servicesByGeo.us, "us")}
+          {renderServiceSection("3) Other Geographies", servicesByGeo.other, "other")}
         </div>
         
         {/* Bottom CTA */}
