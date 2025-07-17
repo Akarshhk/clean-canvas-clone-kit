@@ -1,26 +1,15 @@
 import { Button } from "@/components/ui/button";
 import CountUpAnimation from "./CountUpAnimation";
 import { useState, useEffect } from "react";
-import heroWebP from "@/assets/hero-optimized.webp";
-import heroAVIF from "@/assets/hero-optimized.avif"; 
-import heroFallback from "@/assets/hero-fallback.png";
+import heroOptimized from "@/assets/hero-optimized.jpg";
 
 const HeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    // Preload the most efficient format available
     const img = new Image();
     img.onload = () => setImageLoaded(true);
-    
-    // Try to load AVIF first, then WebP, then PNG
-    if (CSS.supports('image', 'image/avif')) {
-      img.src = heroAVIF;
-    } else if (CSS.supports('image', 'image/webp')) {
-      img.src = heroWebP;
-    } else {
-      img.src = heroFallback;
-    }
+    img.src = heroOptimized;
   }, []);
 
   return (
@@ -35,23 +24,19 @@ const HeroSection = () => {
       >
         <meta itemProp="name" content="AccountsWhiz" />
         <meta itemProp="url" content="https://accountswhiz.com" />
-        <meta itemProp="logo" content={heroFallback} />
+        <meta itemProp="logo" content={heroOptimized} />
         <meta itemProp="description" content="Strategic financial services for startups, SMEs, and cross-border businesses in India and the US." />
         
         {/* Background - starts with solid color, transitions to image when loaded */}
         <div className="absolute inset-0 bg-professional-dark" aria-hidden="true">
           {imageLoaded && (
-            <picture>
-              <source srcSet={heroAVIF} type="image/avif" />
-              <source srcSet={heroWebP} type="image/webp" />
-              <img
-                src={heroFallback}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
-                loading="eager"
-                fetchPriority="high"
-              />
-            </picture>
+            <img
+              src={heroOptimized}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+              loading="eager"
+              fetchPriority="high"
+            />
           )}
           <div className="absolute inset-0 bg-professional-dark/60" />
         </div>
