@@ -19,4 +19,15 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        client: path.resolve(__dirname, 'index.html'),
+        server: path.resolve(__dirname, 'src/entry-server.tsx')
+      }
+    }
+  },
+  ssr: {
+    noExternal: ['@radix-ui/react-slot', '@radix-ui/react-separator']
+  }
 }));
