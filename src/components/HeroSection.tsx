@@ -1,9 +1,17 @@
 import { Button } from "@/components/ui/button";
 import CountUpAnimation from "./CountUpAnimation";
-
-const heroImage = "/lovable-uploads/f93306f8-4598-4e47-a6c2-2a49e3abcb56.png";
+import { useState, useEffect } from "react";
+import heroOptimized from "@/assets/hero-optimized.jpg";
 
 const HeroSection = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => setImageLoaded(true);
+    img.src = heroOptimized;
+  }, []);
+
   return (
     <>
       {/* Hero Section as Organization */}
@@ -16,14 +24,20 @@ const HeroSection = () => {
       >
         <meta itemProp="name" content="AccountsWhiz" />
         <meta itemProp="url" content="https://accountswhiz.com" />
-        <meta itemProp="logo" content={heroImage} />
+        <meta itemProp="logo" content={heroOptimized} />
         <meta itemProp="description" content="Strategic financial services for startups, SMEs, and cross-border businesses in India and the US." />
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-          aria-hidden="true"
-        >
+        
+        {/* Background - starts with solid color, transitions to image when loaded */}
+        <div className="absolute inset-0 bg-professional-dark" aria-hidden="true">
+          {imageLoaded && (
+            <img
+              src={heroOptimized}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+              loading="eager"
+              fetchPriority="high"
+            />
+          )}
           <div className="absolute inset-0 bg-professional-dark/60" />
         </div>
 
