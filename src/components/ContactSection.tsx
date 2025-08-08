@@ -7,23 +7,32 @@ import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import ReCAPTCHA from "react-google-recaptcha";
-import { useRef, useState } from "react";
+import { useState, useEffect } from "react";
 
 const ContactSection = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const { toast } = useToast();
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  const [captchaAnswer, setCaptchaAnswer] = useState<number>(0);
+  const [captchaInput, setCaptchaInput] = useState<string>("");
+  const [captchaQuestion, setCaptchaQuestion] = useState<string>("");
   
-  // Use test site key for development - replace with your actual site key in production
-  const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+  // Generate simple math captcha
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    setCaptchaAnswer(num1 + num2);
+    setCaptchaQuestion(`${num1} + ${num2} = ?`);
+  };
+
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
 
   const onSubmit = async (data: any) => {
-    if (!captchaValue) {
+    if (parseInt(captchaInput) !== captchaAnswer) {
       toast({
-        title: "Please complete the CAPTCHA",
-        description: "Please verify that you are not a robot.",
+        title: "Please solve the math problem correctly",
+        description: "Please verify that you are human by solving the math problem.",
         variant: "destructive"
       });
       return;
@@ -57,8 +66,8 @@ const ContactSection = () => {
         description: "Thank you for reaching out. We'll get back to you soon.",
       });
       reset();
-      setCaptchaValue(null);
-      recaptchaRef.current?.reset();
+      setCaptchaInput("");
+      generateCaptcha();
     } catch (error) {
       console.error('Submission error:', error);
       toast({
@@ -69,9 +78,6 @@ const ContactSection = () => {
     }
   };
 
-  const onCaptchaChange = (value: string | null) => {
-    setCaptchaValue(value);
-  };
 
   return (
     <section
@@ -256,21 +262,27 @@ const ContactSection = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label>Security Verification *</Label>
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey={RECAPTCHA_SITE_KEY}
-                      onChange={onCaptchaChange}
-                      theme="light"
-                      size="normal"
-                    />
+                    <Label htmlFor="captcha">Security Verification *</Label>
+                    <div className="flex items-center gap-4">
+                      <div className="bg-muted p-4 rounded-lg border">
+                        <span className="text-lg font-mono">{captchaQuestion}</span>
+                      </div>
+                      <Input
+                        id="captcha"
+                        type="number"
+                        placeholder="Your answer"
+                        value={captchaInput}
+                        onChange={(e) => setCaptchaInput(e.target.value)}
+                        className="w-32"
+                      />
+                    </div>
                   </div>
                   
                   <Button 
                     type="submit" 
                     size="lg" 
                     className="w-full"
-                    disabled={!captchaValue}
+                    disabled={parseInt(captchaInput) !== captchaAnswer}
                   >
                     Send Message
                   </Button>
