@@ -7,12 +7,28 @@ import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef, useState } from "react";
 
 const ContactSection = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const { toast } = useToast();
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  
+  // Use test site key for development - replace with your actual site key in production
+  const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 
   const onSubmit = async (data: any) => {
+    if (!captchaValue) {
+      toast({
+        title: "Please complete the CAPTCHA",
+        description: "Please verify that you are not a robot.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     try {
       const { error } = await supabase
         .from('Contact')
@@ -41,6 +57,8 @@ const ContactSection = () => {
         description: "Thank you for reaching out. We'll get back to you soon.",
       });
       reset();
+      setCaptchaValue(null);
+      recaptchaRef.current?.reset();
     } catch (error) {
       console.error('Submission error:', error);
       toast({
@@ -49,6 +67,10 @@ const ContactSection = () => {
         variant: "destructive"
       });
     }
+  };
+
+  const onCaptchaChange = (value: string | null) => {
+    setCaptchaValue(value);
   };
 
   return (
@@ -233,7 +255,23 @@ const ContactSection = () => {
                     )}
                   </div>
                   
-                  <Button type="submit" size="lg" className="w-full">
+                  <div className="space-y-2">
+                    <Label>Security Verification *</Label>
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={RECAPTCHA_SITE_KEY}
+                      onChange={onCaptchaChange}
+                      theme="light"
+                      size="normal"
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full"
+                    disabled={!captchaValue}
+                  >
                     Send Message
                   </Button>
                 </form>
